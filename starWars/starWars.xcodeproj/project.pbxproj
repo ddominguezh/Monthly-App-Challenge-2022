@@ -149,6 +149,8 @@
 		26DDCDF827AEFD0A001C98C3 /* FilmAPIEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DDCDF727AEFD0A001C98C3 /* FilmAPIEntity.swift */; };
 		26DDCDFA27AEFE36001C98C3 /* VehicleAPIEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DDCDF927AEFE36001C98C3 /* VehicleAPIEntity.swift */; };
 		26DDCDFC27AEFF82001C98C3 /* SpeccyAPIEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DDCDFB27AEFF82001C98C3 /* SpeccyAPIEntity.swift */; };
+		26F7DFE527B041B300982E9B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFE427B041B300982E9B /* SearchBar.swift */; };
+		26F7DFE927B0EA8800982E9B /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFE827B0EA8800982E9B /* Color+App.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,6 +316,8 @@
 		26DDCDF727AEFD0A001C98C3 /* FilmAPIEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmAPIEntity.swift; sourceTree = "<group>"; };
 		26DDCDF927AEFE36001C98C3 /* VehicleAPIEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAPIEntity.swift; sourceTree = "<group>"; };
 		26DDCDFB27AEFF82001C98C3 /* SpeccyAPIEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeccyAPIEntity.swift; sourceTree = "<group>"; };
+		26F7DFE427B041B300982E9B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		26F7DFE827B0EA8800982E9B /* Color+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +368,7 @@
 		26DDCC0827ACFC37001C98C3 /* starWars */ = {
 			isa = PBXGroup;
 			children = (
+				26F7DFE327B0419E00982E9B /* Components */,
 				26DDCC6127AD44C3001C98C3 /* Helpers */,
 				26DDCD3327AE66A4001C98C3 /* Speccy */,
 				26DDCD3227AE667C001C98C3 /* Vehicle */,
@@ -446,6 +451,7 @@
 				26DDCCF427ADDA92001C98C3 /* Domain */,
 				26DDCC8627AD505B001C98C3 /* Data */,
 				26DDCCAF27AD8FBB001C98C3 /* String+Empty.swift */,
+				26F7DFE827B0EA8800982E9B /* Color+App.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1540,6 +1546,14 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
+		26F7DFE327B0419E00982E9B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				26F7DFE427B041B300982E9B /* SearchBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1711,6 +1725,7 @@
 				26DDCC7F27AD4930001C98C3 /* StarshipAPIImpl.swift in Sources */,
 				26DDCCF127ADAB61001C98C3 /* FilterStarshipUseCase.swift in Sources */,
 				26DDCCEF27ADAB5A001C98C3 /* PageStarshipUseCase.swift in Sources */,
+				26F7DFE527B041B300982E9B /* SearchBar.swift in Sources */,
 				26DDCC9527AD52D0001C98C3 /* StarshipListModel.swift in Sources */,
 				26DDCCB327AD9B6B001C98C3 /* PeopleListView.swift in Sources */,
 				26DDCD9A27AE8168001C98C3 /* VehicleAPIImpl.swift in Sources */,
@@ -1726,6 +1741,7 @@
 				26DDCC6D27AD463B001C98C3 /* StarshipModel.swift in Sources */,
 				26DDCCF727ADDAB8001C98C3 /* UseCaseException.swift in Sources */,
 				26DDCCC727AD9C63001C98C3 /* StarshipListViewModel.swift in Sources */,
+				26F7DFE927B0EA8800982E9B /* Color+App.swift in Sources */,
 				26DDCC7B27AD490F001C98C3 /* PeopleAPIImpl.swift in Sources */,
 				26DDCD5C27AE77B5001C98C3 /* FilmModel.swift in Sources */,
 				26DDCCBB27AD9C05001C98C3 /* StarshipListView.swift in Sources */,

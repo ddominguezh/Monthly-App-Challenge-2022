@@ -15,9 +15,11 @@ class FilmListViewModel: ObservableObject {
     @Published var films: FilmListModel = FilmListModel.NullObject
     @Published var errorMessage = ""
     @Published var hasError = false
+    @Published var fetching = false
     
     func all() {
         self.errorMessage = String.Empty
+        self.fetching = true
         allUseCase.execute {
             self.response($0)
         }
@@ -25,6 +27,7 @@ class FilmListViewModel: ObservableObject {
     
     func filter(value: String) {
         self.errorMessage = String.Empty
+        self.fetching = true
         filterUserCase.execute(value: value) {
             self.response($0)
         }
@@ -33,23 +36,21 @@ class FilmListViewModel: ObservableObject {
     func next() {
         self.errorMessage = String.Empty
         if self.containNextPage() {
-            self.page(url: self.films.next)
+            self.fetching = true
+            self.pageUseCase.execute(url: self.films.next) {
+                switch $0 {
+                case .success(let films):
+                    self.films.add(model: films)
+                case .failure(let error):
+                    self.films = FilmListModel.NullObject
+                    self.errorMessage = error.localizedDescription
+                    self.hasError = true
+                }
+                self.fetching = false
+            }
         }
     }
-    
-    func previous() {
-        self.errorMessage = String.Empty
-        if self.containPreviousPage() {
-            self.page(url: self.films.previous)
-        }
-    }
-    
-    private func page(url: String) {
-        self.pageUseCase.execute(url: url) {
-            self.response($0)
-        }
-    }
-    
+
     private func response(_ result: Result<FilmListModel, UseCaseException>) {
         switch result {
         case .success(let films):
@@ -59,13 +60,11 @@ class FilmListViewModel: ObservableObject {
             self.errorMessage = error.localizedDescription
             self.hasError = true
         }
+        self.fetching = false
     }
     
     func containNextPage() -> Bool {
-        !self.films.next.isEmpty
+        return !self.films.next.isEmpty
     }
-    
-    func containPreviousPage() -> Bool {
-        !self.films.previous.isEmpty
-    }
+
 }

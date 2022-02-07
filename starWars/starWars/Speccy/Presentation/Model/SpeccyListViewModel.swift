@@ -15,15 +15,18 @@ class SpeccyListViewModel: ObservableObject {
     @Published var species: SpeccyListModel = SpeccyListModel.NullObject
     @Published var errorMessage = ""
     @Published var hasError = false
+    @Published var fetching = false
     
     func all() {
         self.errorMessage = String.Empty
+        self.fetching = true
         allUseCase.execute {
             self.response($0)
         }
     }
     
     func filter(value: String) {
+        self.fetching = true
         self.errorMessage = String.Empty
         filterUserCase.execute(value: value) {
             self.response($0)
@@ -33,20 +36,18 @@ class SpeccyListViewModel: ObservableObject {
     func next() {
         self.errorMessage = String.Empty
         if self.containNextPage() {
-            self.page(url: self.species.next)
-        }
-    }
-    
-    func previous() {
-        self.errorMessage = String.Empty
-        if self.containPreviousPage() {
-            self.page(url: self.species.previous)
-        }
-    }
-    
-    private func page(url: String) {
-        self.pageUseCase.execute(url: url) {
-            self.response($0)
+            self.fetching = true
+            self.pageUseCase.execute(url: self.species.next) {
+                switch $0 {
+                case .success(let species):
+                    self.species.add(model: species)
+                case .failure(let error):
+                    self.species = SpeccyListModel.NullObject
+                    self.errorMessage = error.localizedDescription
+                    self.hasError = true
+                }
+                self.fetching = false
+            }
         }
     }
     
@@ -59,13 +60,10 @@ class SpeccyListViewModel: ObservableObject {
             self.errorMessage = error.localizedDescription
             self.hasError = true
         }
+        self.fetching = false
     }
     
     func containNextPage() -> Bool {
-        !self.species.next.isEmpty
-    }
-    
-    func containPreviousPage() -> Bool {
-        !self.species.previous.isEmpty
+        return !self.species.next.isEmpty
     }
 }

@@ -35,3 +35,13 @@ extension PlanetListModel {
         previous: String.Empty,
         results: [])
 }
+
+extension PlanetListModel {
+    mutating func add(model: PlanetListModel) {
+        self.next = model.next
+        self.previous = model.previous
+        model.results.forEach {
+            self.results.append($0)
+        }
+    }
+}

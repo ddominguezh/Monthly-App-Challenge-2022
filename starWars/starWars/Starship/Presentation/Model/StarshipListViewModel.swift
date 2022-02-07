@@ -15,9 +15,11 @@ class StarshipListViewModel: ObservableObject {
     @Published var starships: StarshipListModel = StarshipListModel.NullObject
     @Published var errorMessage = ""
     @Published var hasError = false
+    @Published var fetching = false
     
     func all() {
         self.errorMessage = String.Empty
+        self.fetching = true
         allUseCase.execute {
             self.response($0)
         }
@@ -25,6 +27,7 @@ class StarshipListViewModel: ObservableObject {
     
     func filter(value: String) {
         self.errorMessage = String.Empty
+        self.fetching = true
         filterUserCase.execute(value: value) {
             self.response($0)
         }
@@ -33,23 +36,21 @@ class StarshipListViewModel: ObservableObject {
     func next() {
         self.errorMessage = String.Empty
         if self.containNextPage() {
-            self.page(url: self.starships.next)
+            self.fetching = true
+            self.pageUseCase.execute(url: self.starships.next) {
+                switch $0 {
+                case .success(let starships):
+                    self.starships.add(model: starships)
+                case .failure(let error):
+                    self.starships = StarshipListModel.NullObject
+                    self.errorMessage = error.localizedDescription
+                    self.hasError = true
+                }
+                self.fetching = false
+            }
         }
     }
-    
-    func previous() {
-        self.errorMessage = String.Empty
-        if self.containPreviousPage() {
-            self.page(url: self.starships.previous)
-        }
-    }
-    
-    private func page(url: String) {
-        self.pageUseCase.execute(url: url) {
-            self.response($0)
-        }
-    }
-    
+
     private func response(_ result: Result<StarshipListModel, UseCaseException>) {
         switch result {
         case .success(let starships):
@@ -59,13 +60,11 @@ class StarshipListViewModel: ObservableObject {
             self.errorMessage = error.localizedDescription
             self.hasError = true
         }
+        self.fetching = false
     }
     
     func containNextPage() -> Bool {
-        !self.starships.next.isEmpty
+        return !self.starships.next.isEmpty
     }
-    
-    func containPreviousPage() -> Bool {
-        !self.starships.previous.isEmpty
-    }
+
 }

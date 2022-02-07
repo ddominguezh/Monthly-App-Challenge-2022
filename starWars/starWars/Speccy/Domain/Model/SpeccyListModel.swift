@@ -36,3 +36,13 @@ extension SpeccyListModel {
         previous: String.Empty,
         results: [])
 }
+
+extension SpeccyListModel {
+    mutating func add(model: SpeccyListModel) {
+        self.next = model.next
+        self.previous = model.previous
+        model.results.forEach {
+            self.results.append($0)
+        }
+    }
+}

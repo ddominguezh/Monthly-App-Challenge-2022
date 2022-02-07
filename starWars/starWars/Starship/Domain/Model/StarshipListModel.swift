@@ -35,3 +35,13 @@ extension StarshipListModel {
         previous: String.Empty,
         results: [])
 }
+
+extension StarshipListModel {
+    mutating func add(model: StarshipListModel) {
+        self.next = model.next
+        self.previous = model.previous
+        model.results.forEach {
+            self.results.append($0)
+        }
+    }
+}

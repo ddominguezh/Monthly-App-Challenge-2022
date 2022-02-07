@@ -15,9 +15,11 @@ class VehicleListViewModel: ObservableObject {
     @Published var vehicles: VehicleListModel = VehicleListModel.NullObject
     @Published var errorMessage = ""
     @Published var hasError = false
+    @Published var fetching = false
     
     func all() {
         self.errorMessage = String.Empty
+        self.fetching = true
         allUseCase.execute {
             self.response($0)
         }
@@ -25,6 +27,7 @@ class VehicleListViewModel: ObservableObject {
     
     func filter(value: String) {
         self.errorMessage = String.Empty
+        self.fetching = true
         filterUserCase.execute(value: value) {
             self.response($0)
         }
@@ -33,23 +36,21 @@ class VehicleListViewModel: ObservableObject {
     func next() {
         self.errorMessage = String.Empty
         if self.containNextPage() {
-            self.page(url: self.vehicles.next)
+            self.fetching = true
+            self.pageUseCase.execute(url: self.vehicles.next) {
+                switch $0 {
+                case .success(let vehicles):
+                    self.vehicles.add(model: vehicles)
+                case .failure(let error):
+                    self.vehicles = VehicleListModel.NullObject
+                    self.errorMessage = error.localizedDescription
+                    self.hasError = true
+                }
+                self.fetching = false
+            }
         }
     }
-    
-    func previous() {
-        self.errorMessage = String.Empty
-        if self.containPreviousPage() {
-            self.page(url: self.vehicles.previous)
-        }
-    }
-    
-    private func page(url: String) {
-        self.pageUseCase.execute(url: url) {
-            self.response($0)
-        }
-    }
-    
+
     private func response(_ result: Result<VehicleListModel, UseCaseException>) {
         switch result {
         case .success(let vehicles):
@@ -59,13 +60,11 @@ class VehicleListViewModel: ObservableObject {
             self.errorMessage = error.localizedDescription
             self.hasError = true
         }
+        self.fetching = false
     }
     
     func containNextPage() -> Bool {
-        !self.vehicles.next.isEmpty
+        return !self.vehicles.next.isEmpty
     }
-    
-    func containPreviousPage() -> Bool {
-        !self.vehicles.previous.isEmpty
-    }
+
 }

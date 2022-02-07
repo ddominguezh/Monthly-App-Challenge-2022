@@ -15,9 +15,11 @@ class PlanetListViewModel: ObservableObject {
     @Published var planets: PlanetListModel = PlanetListModel.NullObject
     @Published var errorMessage = ""
     @Published var hasError = false
+    @Published var fetching = false
     
     func all() {
         self.errorMessage = String.Empty
+        self.fetching = true
         allUseCase.execute {
             self.response($0)
         }
@@ -25,6 +27,7 @@ class PlanetListViewModel: ObservableObject {
     
     func filter(value: String) {
         self.errorMessage = String.Empty
+        self.fetching = true
         filterUserCase.execute(value: value) {
             self.response($0)
         }
@@ -33,23 +36,21 @@ class PlanetListViewModel: ObservableObject {
     func next() {
         self.errorMessage = String.Empty
         if self.containNextPage() {
-            self.page(url: self.planets.next)
+            self.fetching = true
+            self.pageUseCase.execute(url: self.planets.next) {
+                switch $0 {
+                case .success(let planets):
+                    self.planets.add(model: planets)
+                case .failure(let error):
+                    self.planets = PlanetListModel.NullObject
+                    self.errorMessage = error.localizedDescription
+                    self.hasError = true
+                }
+                self.fetching = false
+            }
         }
     }
-    
-    func previous() {
-        self.errorMessage = String.Empty
-        if self.containPreviousPage() {
-            self.page(url: self.planets.previous)
-        }
-    }
-    
-    private func page(url: String) {
-        self.pageUseCase.execute(url: url) {
-            self.response($0)
-        }
-    }
-    
+
     private func response(_ result: Result<PlanetListModel, UseCaseException>) {
         switch result {
         case .success(let planets):
@@ -59,13 +60,11 @@ class PlanetListViewModel: ObservableObject {
             self.errorMessage = error.localizedDescription
             self.hasError = true
         }
+        self.fetching = false
     }
-    
+
     func containNextPage() -> Bool {
-        !self.planets.next.isEmpty
+        return !self.planets.next.isEmpty
     }
-    
-    func containPreviousPage() -> Bool {
-        !self.planets.previous.isEmpty
-    }
+
 }

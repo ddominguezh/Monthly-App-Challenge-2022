@@ -35,3 +35,13 @@ extension VehicleListModel {
         previous: String.Empty,
         results: [])
 }
+
+extension VehicleListModel {
+    mutating func add(model: VehicleListModel) {
+        self.next = model.next
+        self.previous = model.previous
+        model.results.forEach {
+            self.results.append($0)
+        }
+    }
+}
