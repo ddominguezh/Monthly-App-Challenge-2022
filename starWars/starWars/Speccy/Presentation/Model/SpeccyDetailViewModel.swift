@@ -10,8 +10,13 @@ import Foundation
 class SpeccyDetailViewModel: ObservableObject {
     
     let detailUseCase = DetailSpeccyUseCase(repository: SpeccyRepositoryImpl(dataSource: SpeccyAPIImpl()))
+    let filmUseCase = DetailFilmUseCase(repository: FilmRepositoryImpl(dataSource: FilmAPIImpl()))
+    let peopleUseCase = DetailPeopleUseCase(repository: PeopleRepositoryImpl(dataSource: PeopleAPIImpl()))
     private var url: String
     @Published var speccy: SpeccyModel = SpeccyModel.NullObject
+    @Published var films: [FilmModel] = [FilmModel]()
+    @Published var peoples: [PeopleModel] = [PeopleModel]()
+    @Published var fetching = false
     @Published var errorMessage = ""
     @Published var hasError = false
     
@@ -21,14 +26,48 @@ class SpeccyDetailViewModel: ObservableObject {
     
     func detail() {
         self.errorMessage = String.Empty
+        self.fetching = true
         detailUseCase.execute(url: self.url) {
             switch $0 {
             case .success(let speccy):
                 self.speccy = speccy
+                self.loadFilms()
+                self.loadPeoples()
             case .failure(let error):
                 self.speccy = SpeccyModel.NullObject
                 self.errorMessage = error.localizedDescription
                 self.hasError = true
+            }
+            self.fetching = false
+        }
+    }
+    
+    private func loadFilms() {
+        self.films = [FilmModel]()
+        self.speccy.films.forEach {
+            filmUseCase.execute(url: $0) {
+                switch $0 {
+                case .success(let film):
+                    self.films.append(film)
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    self.hasError = true
+                }
+            }
+        }
+    }
+    
+    private func loadPeoples() {
+        self.peoples = [PeopleModel]()
+        self.speccy.people.forEach {
+            peopleUseCase.execute(url: $0) {
+                switch $0 {
+                case .success(let people):
+                    self.peoples.append(people)
+                case .failure(let error):
+                    self.errorMessage = error.localizedDescription
+                    self.hasError = true
+                }
             }
         }
     }

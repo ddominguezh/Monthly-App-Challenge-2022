@@ -22,18 +22,24 @@ struct SearchBar: View {
         HStack {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(Color.black)
-            TextField(
-                "Search...",
-                text: $text)
-                .onTapGesture {
-                    self.isEditing = true
+            ZStack(alignment: Alignment.leading) {
+                if self.text.isEmpty {
+                    Text("Search...")
+                        .foregroundColor(Color.black)
                 }
-                .onChange(of: text) { newValue in
-                    print(newValue)
-                    delegate.onChange(text: newValue)
-                }
-                .foregroundColor(Color.black)
-                .accentColor(Color.black)
+                TextField(
+                    "",
+                    text: $text)
+                    .onTapGesture {
+                        self.isEditing = true
+                    }
+                    .onChange(of: text) { newValue in
+                        delegate.onChange(text: newValue)
+                    }
+                    .foregroundColor(Color.black)
+                    .accentColor(Color.black)
+                
+            }
             if self.isEditing {
                 Button(
                     action: {

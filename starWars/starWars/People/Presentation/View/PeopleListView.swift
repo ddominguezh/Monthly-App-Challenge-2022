@@ -12,39 +12,24 @@ struct PeopleListView: View {
     @StateObject var model = PeopleListViewModel()
     @State var searchText: String = String.Empty
     
-    fileprivate func row(_ people: PeopleModel) -> some View {
-        HStack{
-            NavigationLink(destination: PeopleRouter.showDetail(people: people)) {
-                Text("\(people.name)")
-                    .foregroundColor(Color.black)
+    fileprivate func grid() -> some View {
+        GridVView(delegate: self, hasMore: model.peoples.count != model.peoples.results.count) {
+            ForEach(model.peoples.results){ item in
+                GridCellView(
+                    text: item.name,
+                    detailView: AnyView(PeopleRouter.showDetail(people: item))
+                )
             }
         }
-    }
-    
-    fileprivate func list() -> some View {
-        List {
-            ForEach(model.peoples.results.reversed()){ item in
-                row(item)
-            }
-            .listRowBackground(Color.background)
-            .listItemTint(Color.black)
-            .listRowSeparatorTint(Color.black)
-        }
+        .background(.clear)
+        .listStyle(SidebarListStyle())
         .overlay {
             if model.fetching {
-                ProgressView("Fetching data, please wait...")
-                    .progressViewStyle(CircularProgressViewStyle(tint: .accentColor))
+                CustomProgressView()
             }
-        }
-        .refreshable {
-            model.next()
         }
         .task {
             self.search()
-        }
-        .onAppear() {
-            UITableView.appearance().backgroundColor = UIColor.clear
-            UITableViewCell.appearance().backgroundColor = UIColor.clear
         }
         .alert("Error", isPresented: $model.hasError) {
         } message: {
@@ -54,16 +39,11 @@ struct PeopleListView: View {
     
     var body: some View {
         GeometryReader { geo in
-            ZStack {
-                Image("death_start")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: geo.size.width, height: geo.size.height)
+            BackgroundView(size: geo.size) {
                 VStack {
                     SearchBar(delegate: self)
-                        .padding(EdgeInsets.init(top: 16, leading: 16, bottom: 16, trailing: 16))
-                    list()
+                        .padding(EdgeInsets.init(top: 1, leading: 16, bottom: 1, trailing: 16))
+                    grid()
                 }
             }
             .navigationTitle("Peoples")
@@ -74,10 +54,10 @@ struct PeopleListView: View {
 
 extension PeopleListView {
     func search() {
-        if searchText.isEmpty {
-            model.all()
+        if self.searchText.isEmpty {
+            self.model.all()
         } else {
-            model.filter(value: searchText)
+            self.model.filter(value: searchText)
         }
     }
 }
@@ -89,6 +69,11 @@ extension PeopleListView: SearchBarDelegate {
     }
 }
 
+extension PeopleListView: GridViewDelegate {
+    func more() {
+        model.next()
+    }
+}
 struct PeopleListView_Previews: PreviewProvider {
     static var previews: some View {
         PeopleListView()

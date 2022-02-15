@@ -12,37 +12,22 @@ struct StarshipListView: View {
     @StateObject var model = StarshipListViewModel()
     @State var searchText: String = String.Empty
     
-    fileprivate func row(_ starship: StarshipModel) -> some View {
-        HStack{
-            NavigationLink(destination: StarshipRouter.showDetail(starship: starship)) {
-                Text("\(starship.name)")
-                    .foregroundColor(Color.black)
+    fileprivate func grid() -> some View {
+        GridVView(delegate: self, hasMore: model.starships.count != model.starships.results.count) {
+            ForEach(model.starships.results){ item in
+                GridCellView(
+                    text: item.name,
+                    detailView: AnyView(StarshipRouter.showDetail(starship: item))
+                )
             }
-        }
-    }
-    
-    fileprivate func list() -> some View {
-        List {
-            ForEach(model.starships.results.reversed()){ item in
-                row(item)
-            }
-            .listRowBackground(Color.background)
         }
         .overlay {
             if model.fetching {
-                ProgressView("Fetching data, please wait...")
-                    .progressViewStyle(CircularProgressViewStyle(tint: .accentColor))
+                CustomProgressView()
             }
-        }
-        .refreshable {
-            model.next()
         }
         .task {
             self.search()
-        }
-        .onAppear() {
-            UITableView.appearance().backgroundColor = UIColor.clear
-            UITableViewCell.appearance().backgroundColor = UIColor.clear
         }
         .alert("Error", isPresented: $model.hasError) {
         } message: {
@@ -52,15 +37,11 @@ struct StarshipListView: View {
     
     var body: some View {
         GeometryReader { geo in
-            ZStack {
-                Image("death_start")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: geo.size.width, height: geo.size.height)
+            BackgroundView(size: geo.size) {
                 VStack {
                     SearchBar(delegate: self)
-                    list()
+                        .padding(EdgeInsets.init(top: 1, leading: 16, bottom: 1, trailing: 16))
+                    grid()
                 }
             }
             .navigationTitle("Starships")
@@ -71,10 +52,10 @@ struct StarshipListView: View {
 
 extension StarshipListView {
     func search() {
-        if searchText.isEmpty {
-            model.all()
+        if self.searchText.isEmpty {
+            self.model.all()
         } else {
-            model.filter(value: searchText)
+            self.model.filter(value: searchText)
         }
     }
 }
@@ -83,6 +64,12 @@ extension StarshipListView: SearchBarDelegate {
     func onChange(text: String) {
         self.searchText = text
         self.search()
+    }
+}
+
+extension StarshipListView: GridViewDelegate {
+    func more() {
+        self.model.next()
     }
 }
 

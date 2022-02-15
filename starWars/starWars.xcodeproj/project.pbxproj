@@ -151,6 +151,26 @@
 		26DDCDFC27AEFF82001C98C3 /* SpeccyAPIEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DDCDFB27AEFF82001C98C3 /* SpeccyAPIEntity.swift */; };
 		26F7DFE527B041B300982E9B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFE427B041B300982E9B /* SearchBar.swift */; };
 		26F7DFE927B0EA8800982E9B /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFE827B0EA8800982E9B /* Color+App.swift */; };
+		26F7DFEB27B16E4600982E9B /* GridCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFEA27B16E4600982E9B /* GridCellView.swift */; };
+		26F7DFF227B1C50700982E9B /* ImageAPIImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFF127B1C50700982E9B /* ImageAPIImpl.swift */; };
+		26F7DFF827B1C7D600982E9B /* DonwloadImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFF727B1C7D600982E9B /* DonwloadImageTests.swift */; };
+		26F7DFFB27B2608500982E9B /* GoogleSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFFA27B2608500982E9B /* GoogleSearchResponse.swift */; };
+		26F7DFFD27B2663600982E9B /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFFC27B2663600982E9B /* CustomProgressView.swift */; };
+		26F7DFFF27B36A8C00982E9B /* JsonImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFFE27B36A8C00982E9B /* JsonImages.swift */; };
+		26F7E00E27B5DD6B00982E9B /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E00D27B5DD6B00982E9B /* BackgroundView.swift */; };
+		26F7E01027B5E48E00982E9B /* GridVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E00F27B5E48E00982E9B /* GridVView.swift */; };
+		26F7E01227B621D800982E9B /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = 26F7E01127B621D800982E9B /* images.json */; };
+		26F7E01527B6237300982E9B /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E01427B6237300982E9B /* ImageView.swift */; };
+		26F7E01827B623BF00982E9B /* ImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E01727B623BF00982E9B /* ImageViewModel.swift */; };
+		26F7E01B27B6275500982E9B /* ImageFileImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E01A27B6275500982E9B /* ImageFileImpl.swift */; };
+		26F7E01D27B6297000982E9B /* ImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E01C27B6297000982E9B /* ImageDataSource.swift */; };
+		26F7E01F27B62DC000982E9B /* GetImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E01E27B62DC000982E9B /* GetImageUseCase.swift */; };
+		26F7E02927B62F5300982E9B /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E02827B62F5300982E9B /* ImageRepository.swift */; };
+		26F7E03427B6337B00982E9B /* ImageRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03327B6337B00982E9B /* ImageRepositoryImpl.swift */; };
+		26F7E03727B6382E00982E9B /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03627B6382E00982E9B /* ImageItem.swift */; };
+		26F7E03A27B6C80D00982E9B /* InformationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03927B6C80D00982E9B /* InformationItemView.swift */; };
+		26F7E03C27B6CB3500982E9B /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03B27B6CB3500982E9B /* Title.swift */; };
+		26F7E03E27B6CF7A00982E9B /* GridHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03D27B6CF7A00982E9B /* GridHView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,6 +338,27 @@
 		26DDCDFB27AEFF82001C98C3 /* SpeccyAPIEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeccyAPIEntity.swift; sourceTree = "<group>"; };
 		26F7DFE427B041B300982E9B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		26F7DFE827B0EA8800982E9B /* Color+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
+		26F7DFEA27B16E4600982E9B /* GridCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCellView.swift; sourceTree = "<group>"; };
+		26F7DFF127B1C50700982E9B /* ImageAPIImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIImpl.swift; sourceTree = "<group>"; };
+		26F7DFF727B1C7D600982E9B /* DonwloadImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonwloadImageTests.swift; sourceTree = "<group>"; };
+		26F7DFFA27B2608500982E9B /* GoogleSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSearchResponse.swift; sourceTree = "<group>"; };
+		26F7DFFC27B2663600982E9B /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		26F7DFFE27B36A8C00982E9B /* JsonImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonImages.swift; sourceTree = "<group>"; };
+		26F7E00027B38FBF00982E9B /* JsonImages.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JsonImages.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		26F7E00D27B5DD6B00982E9B /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		26F7E00F27B5E48E00982E9B /* GridVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridVView.swift; sourceTree = "<group>"; };
+		26F7E01127B621D800982E9B /* images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
+		26F7E01427B6237300982E9B /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		26F7E01727B623BF00982E9B /* ImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewModel.swift; sourceTree = "<group>"; };
+		26F7E01A27B6275500982E9B /* ImageFileImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileImpl.swift; sourceTree = "<group>"; };
+		26F7E01C27B6297000982E9B /* ImageDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataSource.swift; sourceTree = "<group>"; };
+		26F7E01E27B62DC000982E9B /* GetImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageUseCase.swift; sourceTree = "<group>"; };
+		26F7E02827B62F5300982E9B /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
+		26F7E03327B6337B00982E9B /* ImageRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepositoryImpl.swift; sourceTree = "<group>"; };
+		26F7E03627B6382E00982E9B /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
+		26F7E03927B6C80D00982E9B /* InformationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationItemView.swift; sourceTree = "<group>"; };
+		26F7E03B27B6CB3500982E9B /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		26F7E03D27B6CF7A00982E9B /* GridHView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridHView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +411,7 @@
 			children = (
 				26F7DFE327B0419E00982E9B /* Components */,
 				26DDCC6127AD44C3001C98C3 /* Helpers */,
+				26F7E02227B62EE000982E9B /* Image */,
 				26DDCD3327AE66A4001C98C3 /* Speccy */,
 				26DDCD3227AE667C001C98C3 /* Vehicle */,
 				26DDCD3127AE666F001C98C3 /* Film */,
@@ -379,7 +421,9 @@
 				26DDCC0927ACFC37001C98C3 /* starWarsApp.swift */,
 				26DDCC0B27ACFC37001C98C3 /* ContentView.swift */,
 				26DDCC0D27ACFC46001C98C3 /* Assets.xcassets */,
+				26F7E01127B621D800982E9B /* images.json */,
 				26DDCC0F27ACFC46001C98C3 /* Preview Content */,
+				26F7E00027B38FBF00982E9B /* JsonImages.playground */,
 			);
 			path = starWars;
 			sourceTree = "<group>";
@@ -395,6 +439,7 @@
 		26DDCC1927ACFC46001C98C3 /* starWarsTests */ = {
 			isa = PBXGroup;
 			children = (
+				26F7DFF327B1C7A700982E9B /* Helpers */,
 				26DDCDBD27AE9C50001C98C3 /* Speccy */,
 				26DDCDBC27AE9C49001C98C3 /* Vehicle */,
 				26DDCDBB27AE9C3B001C98C3 /* Film */,
@@ -448,8 +493,7 @@
 		26DDCC6127AD44C3001C98C3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				26DDCCF427ADDA92001C98C3 /* Domain */,
-				26DDCC8627AD505B001C98C3 /* Data */,
+				26F7E03827B63D1C00982E9B /* Exception */,
 				26DDCCAF27AD8FBB001C98C3 /* String+Empty.swift */,
 				26F7DFE827B0EA8800982E9B /* Color+App.swift */,
 			);
@@ -620,30 +664,6 @@
 			children = (
 				26DDCC8D27AD50BE001C98C3 /* Entity */,
 				26DDCC7A27AD490F001C98C3 /* PeopleAPIImpl.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		26DDCC8627AD505B001C98C3 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				26DDCC8727AD5065001C98C3 /* DataSource */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		26DDCC8727AD5065001C98C3 /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				26DDCC8827AD506F001C98C3 /* API */,
-			);
-			path = DataSource;
-			sourceTree = "<group>";
-		};
-		26DDCC8827AD506F001C98C3 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				26DDCC8927AD5089001C98C3 /* APIException.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -878,22 +898,6 @@
 				26DDCCE427ADAAF8001C98C3 /* FilterPeopleUseCase.swift */,
 				26DDCCE627ADAB11001C98C3 /* AllPeopleUseCase.swift */,
 				26DDCD2F27AE6103001C98C3 /* DetailPeopleUseCase.swift */,
-			);
-			path = UseCase;
-			sourceTree = "<group>";
-		};
-		26DDCCF427ADDA92001C98C3 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				26DDCCF527ADDA9B001C98C3 /* UseCase */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		26DDCCF527ADDA9B001C98C3 /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-				26DDCCF627ADDAB8001C98C3 /* UseCaseException.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -1550,8 +1554,178 @@
 			isa = PBXGroup;
 			children = (
 				26F7DFE427B041B300982E9B /* SearchBar.swift */,
+				26F7E00F27B5E48E00982E9B /* GridVView.swift */,
+				26F7E03D27B6CF7A00982E9B /* GridHView.swift */,
+				26F7DFEA27B16E4600982E9B /* GridCellView.swift */,
+				26F7DFFC27B2663600982E9B /* CustomProgressView.swift */,
+				26F7E00D27B5DD6B00982E9B /* BackgroundView.swift */,
+				26F7E03927B6C80D00982E9B /* InformationItemView.swift */,
+				26F7E03B27B6CB3500982E9B /* Title.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		26F7DFF327B1C7A700982E9B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				26F7DFF427B1C7B100982E9B /* Data */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		26F7DFF427B1C7B100982E9B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				26F7DFF527B1C7BB00982E9B /* DataSource */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		26F7DFF527B1C7BB00982E9B /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				26F7DFF627B1C7BF00982E9B /* API */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		26F7DFF627B1C7BF00982E9B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				26F7DFF727B1C7D600982E9B /* DonwloadImageTests.swift */,
+				26F7DFFE27B36A8C00982E9B /* JsonImages.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		26F7E02227B62EE000982E9B /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E02327B62EF000982E9B /* Data */,
+				26F7E02427B62EF500982E9B /* Presentation */,
+				26F7E02527B62F0000982E9B /* Domain */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		26F7E02327B62EF000982E9B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E03227B6336000982E9B /* Repository */,
+				26F7E02E27B632C500982E9B /* DataSource */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		26F7E02427B62EF500982E9B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E02B27B62FE900982E9B /* View */,
+				26F7E02A27B62FE300982E9B /* Model */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		26F7E02527B62F0000982E9B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E02727B62F2300982E9B /* UseCase */,
+				26F7E02627B62F1700982E9B /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		26F7E02627B62F1700982E9B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E02827B62F5300982E9B /* ImageRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		26F7E02727B62F2300982E9B /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E01E27B62DC000982E9B /* GetImageUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		26F7E02A27B62FE300982E9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E01727B623BF00982E9B /* ImageViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		26F7E02B27B62FE900982E9B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E01427B6237300982E9B /* ImageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		26F7E02E27B632C500982E9B /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E01C27B6297000982E9B /* ImageDataSource.swift */,
+				26F7E03027B632E700982E9B /* File */,
+				26F7E02F27B632D800982E9B /* API */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		26F7E02F27B632D800982E9B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E03127B632F600982E9B /* Entity */,
+				26F7DFF127B1C50700982E9B /* ImageAPIImpl.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		26F7E03027B632E700982E9B /* File */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E03527B6380000982E9B /* Entity */,
+				26F7E01A27B6275500982E9B /* ImageFileImpl.swift */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		26F7E03127B632F600982E9B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				26F7DFFA27B2608500982E9B /* GoogleSearchResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		26F7E03227B6336000982E9B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E03327B6337B00982E9B /* ImageRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		26F7E03527B6380000982E9B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				26F7E03627B6382E00982E9B /* ImageItem.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		26F7E03827B63D1C00982E9B /* Exception */ = {
+			isa = PBXGroup;
+			children = (
+				26DDCC8927AD5089001C98C3 /* APIException.swift */,
+				26DDCCF627ADDAB8001C98C3 /* UseCaseException.swift */,
+			);
+			path = Exception;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1660,6 +1834,7 @@
 			files = (
 				26DDCC1127ACFC46001C98C3 /* Preview Assets.xcassets in Resources */,
 				26DDCC0E27ACFC46001C98C3 /* Assets.xcassets in Resources */,
+				26F7E01227B621D800982E9B /* images.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1688,6 +1863,7 @@
 				26DDCD6227AE77E4001C98C3 /* VehicleModel.swift in Sources */,
 				26DDCCB027AD8FBB001C98C3 /* String+Empty.swift in Sources */,
 				26DDCD9027AE80B7001C98C3 /* SpeccyDataSource.swift in Sources */,
+				26F7DFFB27B2608500982E9B /* GoogleSearchResponse.swift in Sources */,
 				26DDCDF227AEF52F001C98C3 /* PeopleAPIEntity.swift in Sources */,
 				26DDCC8127AD4A50001C98C3 /* PlanetDataSource.swift in Sources */,
 				26DDCD7627AE7E51001C98C3 /* PageVehicleUseCase.swift in Sources */,
@@ -1695,39 +1871,49 @@
 				26DDCCE527ADAAF8001C98C3 /* FilterPeopleUseCase.swift in Sources */,
 				26DDCDFC27AEFF82001C98C3 /* SpeccyAPIEntity.swift in Sources */,
 				26DDCC8327AD4AB5001C98C3 /* StarshipDataSource.swift in Sources */,
+				26F7E01B27B6275500982E9B /* ImageFileImpl.swift in Sources */,
+				26F7E01827B623BF00982E9B /* ImageViewModel.swift in Sources */,
 				26DDCC8A27AD5089001C98C3 /* APIException.swift in Sources */,
 				26DDCD3027AE6103001C98C3 /* DetailPeopleUseCase.swift in Sources */,
 				26DDCDA627AE82AA001C98C3 /* VehicleListViewModel.swift in Sources */,
 				26DDCDB027AE8355001C98C3 /* FilmListView.swift in Sources */,
 				26DDCD7C27AE7E69001C98C3 /* DetailVehicleUseCase.swift in Sources */,
 				26DDCD6C27AE7DB1001C98C3 /* SpeccyRepository.swift in Sources */,
+				26F7E01027B5E48E00982E9B /* GridVView.swift in Sources */,
 				26DDCD7027AE7E29001C98C3 /* FilterFilmUseCase.swift in Sources */,
 				26DDCD9E27AE81DD001C98C3 /* FilmRouter.swift in Sources */,
+				26F7E03E27B6CF7A00982E9B /* GridHView.swift in Sources */,
 				26DDCDA027AE81E6001C98C3 /* VehicleRouter.swift in Sources */,
 				26DDCD7A27AE7E62001C98C3 /* AllVehicleUseCase.swift in Sources */,
 				26DDCCCB27ADA15B001C98C3 /* PeopleListModel.swift in Sources */,
 				26DDCCF327ADAB69001C98C3 /* AllStarshipUseCase.swift in Sources */,
 				26DDCCBF27AD9C21001C98C3 /* PlanetListView.swift in Sources */,
+				26F7DFF227B1C50700982E9B /* ImageAPIImpl.swift in Sources */,
 				26DDCD9227AE80FF001C98C3 /* FilmListAPIEntity.swift in Sources */,
 				26DDCDAE27AE82DD001C98C3 /* FilmDetailViewModel.swift in Sources */,
 				26DDCCC127AD9C2C001C98C3 /* PlanetDetailView.swift in Sources */,
 				26DDCCD427ADA801001C98C3 /* PlanetRepositoryImpl.swift in Sources */,
 				26DDCD8627AE8029001C98C3 /* FilmRepositoryImpl.swift in Sources */,
 				26DDCCE227ADAADE001C98C3 /* PagePeopleUseCase.swift in Sources */,
+				26F7E00E27B5DD6B00982E9B /* BackgroundView.swift in Sources */,
 				26DDCDF427AEFA00001C98C3 /* PlanetAPIEntity.swift in Sources */,
 				26DDCDA227AE81F1001C98C3 /* SpeccyRouter.swift in Sources */,
 				26DDCD2A27AE5E34001C98C3 /* DetailStarshipUseCase.swift in Sources */,
 				26DDCC8F27AD50D5001C98C3 /* PeopleListAPIEntity.swift in Sources */,
+				26F7E03C27B6CB3500982E9B /* Title.swift in Sources */,
+				26F7E03A27B6C80D00982E9B /* InformationItemView.swift in Sources */,
 				26DDCDB227AE835E001C98C3 /* VehicleListView.swift in Sources */,
 				26DDCCD827ADA925001C98C3 /* StarshipRepository.swift in Sources */,
 				26DDCD2827AE5AC7001C98C3 /* StarshipRouter.swift in Sources */,
 				26DDCD2E27AE60ED001C98C3 /* DetailPlanetUseCase.swift in Sources */,
 				26DDCC7F27AD4930001C98C3 /* StarshipAPIImpl.swift in Sources */,
 				26DDCCF127ADAB61001C98C3 /* FilterStarshipUseCase.swift in Sources */,
+				26F7E01D27B6297000982E9B /* ImageDataSource.swift in Sources */,
 				26DDCCEF27ADAB5A001C98C3 /* PageStarshipUseCase.swift in Sources */,
 				26F7DFE527B041B300982E9B /* SearchBar.swift in Sources */,
 				26DDCC9527AD52D0001C98C3 /* StarshipListModel.swift in Sources */,
 				26DDCCB327AD9B6B001C98C3 /* PeopleListView.swift in Sources */,
+				26F7E01527B6237300982E9B /* ImageView.swift in Sources */,
 				26DDCD9A27AE8168001C98C3 /* VehicleAPIImpl.swift in Sources */,
 				26DDCD2327AE56E7001C98C3 /* PeopleRouter.swift in Sources */,
 				26DDCDA827AE82B7001C98C3 /* SpeccyListViewModel.swift in Sources */,
@@ -1754,12 +1940,14 @@
 				26DDCDB627AE8378001C98C3 /* FilmDetailView.swift in Sources */,
 				26DDCCD627ADA808001C98C3 /* PlanetRepository.swift in Sources */,
 				26DDCC0A27ACFC37001C98C3 /* starWarsApp.swift in Sources */,
+				26F7E03727B6382E00982E9B /* ImageItem.swift in Sources */,
 				26DDCD9827AE815F001C98C3 /* FilmAPIImpl.swift in Sources */,
 				26DDCCB527AD9B89001C98C3 /* PeopleDetailView.swift in Sources */,
 				26DDCD7827AE7E59001C98C3 /* FilterVehicleUseCase.swift in Sources */,
 				26DDCC8527AD4AC9001C98C3 /* PeopleDataSource.swift in Sources */,
 				26DDCDBA27AE838C001C98C3 /* SpeccyDetailView.swift in Sources */,
 				26DDCD7227AE7E30001C98C3 /* AllFilmUseCase.swift in Sources */,
+				26F7E02927B62F5300982E9B /* ImageRepository.swift in Sources */,
 				26DDCD6027AE77D6001C98C3 /* VehicleListModel.swift in Sources */,
 				26DDCD9627AE8113001C98C3 /* SpeccyListAPIEntity.swift in Sources */,
 				26DDCD8827AE8031001C98C3 /* VehicleRepositoryImpl.swift in Sources */,
@@ -1773,6 +1961,7 @@
 				26DDCC9927AD5388001C98C3 /* PlanetListModel.swift in Sources */,
 				26DDCDF827AEFD0A001C98C3 /* FilmAPIEntity.swift in Sources */,
 				26DDCCE727ADAB11001C98C3 /* AllPeopleUseCase.swift in Sources */,
+				26F7DFFD27B2663600982E9B /* CustomProgressView.swift in Sources */,
 				26DDCC9327AD5121001C98C3 /* StarshipListAPIEntity.swift in Sources */,
 				26DDCCC927AD9C6F001C98C3 /* StarshipDetailViewModel.swift in Sources */,
 				26DDCCD227ADA7DD001C98C3 /* PeopleRepository.swift in Sources */,
@@ -1780,6 +1969,7 @@
 				26DDCDAC27AE82D5001C98C3 /* VehicleDetailViewModel.swift in Sources */,
 				26DDCC6927AD45FE001C98C3 /* PeopleModel.swift in Sources */,
 				26DDCD6627AE7801001C98C3 /* SpeccyModel.swift in Sources */,
+				26F7E01F27B62DC000982E9B /* GetImageUseCase.swift in Sources */,
 				26DDCD7427AE7E38001C98C3 /* DetailFilmUseCase.swift in Sources */,
 				26DDCD8027AE7E86001C98C3 /* FilterSpeccyUseCase.swift in Sources */,
 				26DDCCC327AD9C45001C98C3 /* PlanetListViewModel.swift in Sources */,
@@ -1790,7 +1980,9 @@
 				26DDCCE927ADAB30001C98C3 /* PagePlanetUseCase.swift in Sources */,
 				26DDCD8E27AE80A6001C98C3 /* VehicleDataSource.swift in Sources */,
 				26DDCDB827AE8382001C98C3 /* VehicleDetailView.swift in Sources */,
+				26F7E03427B6337B00982E9B /* ImageRepositoryImpl.swift in Sources */,
 				26DDCD8427AE7E96001C98C3 /* DetailSpeccyUseCase.swift in Sources */,
+				26F7DFEB27B16E4600982E9B /* GridCellView.swift in Sources */,
 				26DDCCEB27ADAB39001C98C3 /* FilterPlanetUseCase.swift in Sources */,
 				26DDCD6E27AE7E20001C98C3 /* PageFilmUseCase.swift in Sources */,
 			);
@@ -1801,6 +1993,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26DDCD0127ADE3FD001C98C3 /* FilterPeopleUseCaseTests.swift in Sources */,
+				26F7DFF827B1C7D600982E9B /* DonwloadImageTests.swift in Sources */,
 				26DDCC1B27ACFC46001C98C3 /* starWarsTests.swift in Sources */,
 				26DDCDD027AE9D13001C98C3 /* VehicleAPIImplTests.swift in Sources */,
 				26DDCDE827AE9F9A001C98C3 /* AllSpeccyUseCaseTests.swift in Sources */,
@@ -1818,6 +2011,7 @@
 				26DDCDD227AE9D1E001C98C3 /* SpeccyAPIImplTests.swift in Sources */,
 				26DDCDDE27AE9EE7001C98C3 /* FilterVehicleUseCaseTests.swift in Sources */,
 				26DDCCFF27ADE2A4001C98C3 /* AllPeopleUseCaseTests.swift in Sources */,
+				26F7DFFF27B36A8C00982E9B /* JsonImages.swift in Sources */,
 				26DDCDEC27AE9FB0001C98C3 /* DetailStarshipUseCaseTests.swift in Sources */,
 				26DDCD0327ADE431001C98C3 /* PagePeopleUseCaseTests.swift in Sources */,
 				26DDCD0B27ADE62C001C98C3 /* PageStarshipUseCaseTests.swift in Sources */,

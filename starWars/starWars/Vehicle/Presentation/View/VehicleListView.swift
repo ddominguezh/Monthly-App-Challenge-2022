@@ -12,37 +12,22 @@ struct VehicleListView: View {
     @StateObject var model = VehicleListViewModel()
     @State var searchText: String = String.Empty
 
-    fileprivate func row(_ vehicle: VehicleModel) -> some View {
-        HStack{
-            NavigationLink(destination: VehicleRouter.showDetail(vehicle: vehicle)) {
-                Text("\(vehicle.name)")
-                    .foregroundColor(Color.black)
+    fileprivate func grid() -> some View {
+        GridVView(delegate: self, hasMore: model.vehicles.count != model.vehicles.results.count) {
+            ForEach(model.vehicles.results){ item in
+                GridCellView(
+                    text: item.name,
+                    detailView: AnyView(VehicleRouter.showDetail(vehicle: item))
+                )
             }
-        }
-    }
-    
-    fileprivate func list() -> some View {
-        List {
-            ForEach(model.vehicles.results.reversed()){ item in
-                row(item)
-            }
-            .listRowBackground(Color.background)
         }
         .overlay {
             if model.fetching {
-                ProgressView("Fetching data, please wait...")
-                    .progressViewStyle(CircularProgressViewStyle(tint: .accentColor))
+                CustomProgressView()
             }
-        }
-        .refreshable {
-            model.next()
         }
         .task {
             self.search()
-        }
-        .onAppear() {
-            UITableView.appearance().backgroundColor = UIColor.clear
-            UITableViewCell.appearance().backgroundColor = UIColor.clear
         }
         .alert("Error", isPresented: $model.hasError) {
         } message: {
@@ -52,15 +37,11 @@ struct VehicleListView: View {
     
     var body: some View {
         GeometryReader { geo in
-            ZStack {
-                Image("death_start")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: geo.size.width, height: geo.size.height)
+            BackgroundView(size: geo.size) {
                 VStack {
                     SearchBar(delegate: self)
-                    list()
+                        .padding(EdgeInsets.init(top: 1, leading: 16, bottom: 1, trailing: 16))
+                    grid()
                 }
             }
             .navigationTitle("Vehicles")
@@ -71,10 +52,10 @@ struct VehicleListView: View {
 
 extension VehicleListView {
     func search() {
-        if searchText.isEmpty {
-            model.all()
+        if self.searchText.isEmpty {
+            self.model.all()
         } else {
-            model.filter(value: searchText)
+            self.model.filter(value: searchText)
         }
     }
 }
@@ -83,6 +64,12 @@ extension VehicleListView: SearchBarDelegate {
     func onChange(text: String) {
         self.searchText = text
         self.search()
+    }
+}
+
+extension VehicleListView: GridViewDelegate {
+    func more() {
+        self.model.next()
     }
 }
 
