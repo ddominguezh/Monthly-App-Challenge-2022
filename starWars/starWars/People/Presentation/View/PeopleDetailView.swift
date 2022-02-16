@@ -11,10 +11,11 @@ struct PeopleDetailView: View {
     
     @StateObject var model: PeopleDetailViewModel
     
-    fileprivate func detail() -> some View {
+    fileprivate func detail(size: CGSize) -> some View {
         VStack {
             if !model.people.name.isEmpty {
                 ImageView(name: model.people.name)
+                    .frame(width: 100, height: 100)
             }
             ScrollView {
                 self.information()
@@ -25,7 +26,7 @@ struct PeopleDetailView: View {
                             GridCellView(
                                 text: item.title,
                                 detailView: AnyView(FilmRouter.showDetail(film: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -36,7 +37,7 @@ struct PeopleDetailView: View {
                             GridCellView(
                                 text: item.name,
                                 detailView: AnyView(SpeccyRouter.showDetail(speccy: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -47,7 +48,7 @@ struct PeopleDetailView: View {
                             GridCellView(
                                 text: item.name,
                                 detailView: AnyView(StarshipRouter.showDetail(starship: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -58,7 +59,7 @@ struct PeopleDetailView: View {
                             GridCellView(
                                 text: item.name,
                                 detailView: AnyView(VehicleRouter.showDetail(vehicle: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -96,7 +97,7 @@ struct PeopleDetailView: View {
     var body: some View {
         GeometryReader { geo in
             BackgroundView(size: geo.size) {
-                detail()
+                detail(size: geo.size)
             }
             .navigationTitle("Starships")
             .navigationBarTitleDisplayMode(.inline)

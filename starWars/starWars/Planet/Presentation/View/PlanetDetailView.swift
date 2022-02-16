@@ -11,10 +11,11 @@ struct PlanetDetailView: View {
     
     @StateObject var model: PlanetDetailViewModel
     
-    fileprivate func detail() -> some View {
+    fileprivate func detail(size: CGSize) -> some View {
         VStack {
             if !model.planet.name.isEmpty {
                 ImageView(name: model.planet.name)
+                    .frame(width: 100, height: 100)
             }
             ScrollView {
                 self.information()
@@ -25,7 +26,7 @@ struct PlanetDetailView: View {
                             GridCellView(
                                 text: item.title,
                                 detailView: AnyView(FilmRouter.showDetail(film: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -36,7 +37,7 @@ struct PlanetDetailView: View {
                             GridCellView(
                                 text: item.name,
                                 detailView: AnyView(PeopleRouter.showDetail(people: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -73,7 +74,7 @@ struct PlanetDetailView: View {
     var body: some View {
         GeometryReader { geo in
             BackgroundView(size: geo.size) {
-                detail()
+                detail(size: geo.size)
             }
             .navigationTitle("Starships")
             .navigationBarTitleDisplayMode(.inline)

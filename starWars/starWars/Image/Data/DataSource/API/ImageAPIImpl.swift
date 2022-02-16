@@ -9,7 +9,7 @@ import Foundation
 
 class ImageAPIImpl: ImageDataSource {
     func getUrlImage(name: String) -> String {
-        let escapeName = name.replacingOccurrences(of: " ", with: "+")
+        let escapeName = "wikia+\(name.replacingOccurrences(of: " ", with: "+"))"
         if let url = URL(string: "https://www.googleapis.com/customsearch/v1?key=AIzaSyBJgM7J3cFbZAKLvj3MRHH6QS3AbdLote0&cx=a7150d9c4b89cdc67&q=\(escapeName)&searchType=image&alt=json") {
             guard let data = try? Data(contentsOf: url) else {
                 return String.Empty

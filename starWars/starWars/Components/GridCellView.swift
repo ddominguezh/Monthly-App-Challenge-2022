@@ -8,22 +8,19 @@
 import SwiftUI
 
 struct GridCellView: View {
+    
     var text: String
     var detailView: AnyView
     
     var body: some View {
         NavigationLink(destination: self.detailView) {
-            ZStack {
-                Rectangle()
+            ZStack(alignment: .bottom) {
+                ImageView(name: self.text)
+                    .frame(minWidth: CGFloat.zero, maxWidth: .infinity, minHeight: 160, maxHeight: 160)
+                Text(self.text)
+                    .foregroundColor(.white)
+                    .frame(minWidth: CGFloat.zero, maxWidth: .infinity, minHeight: 25, maxHeight: 50)
                     .background(Color.blackAlpha)
-                    .foregroundColor(.clear)
-                VStack{
-                    ImageView(name: self.text)
-                        .frame(width: 100, height: 100)
-                    Spacer()
-                    Text(self.text)
-                        .foregroundColor(.white)
-                }.padding(16)
             }
             .cornerRadius(16.0)
         }

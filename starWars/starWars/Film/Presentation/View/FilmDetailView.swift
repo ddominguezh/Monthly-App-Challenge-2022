@@ -10,10 +10,11 @@ import SwiftUI
 struct FilmDetailView: View {
     @StateObject var model: FilmDetailViewModel
     
-    fileprivate func detail() -> some View {
+    fileprivate func detail(size: CGSize) -> some View {
         VStack {
             if !model.film.title.isEmpty {
                 ImageView(name: model.film.title)
+                    .frame(width: 100, height: 100)
             }
             ScrollView {
                 self.information()
@@ -24,7 +25,7 @@ struct FilmDetailView: View {
                             GridCellView(
                                 text: item.name,
                                 detailView: AnyView(PlanetRouter.showDetail(planet: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -35,7 +36,7 @@ struct FilmDetailView: View {
                             GridCellView(
                                 text: item.name,
                                 detailView: AnyView(PeopleRouter.showDetail(people: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -46,7 +47,7 @@ struct FilmDetailView: View {
                             GridCellView(
                                 text: item.name,
                                 detailView: AnyView(SpeccyRouter.showDetail(speccy: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -57,7 +58,7 @@ struct FilmDetailView: View {
                             GridCellView(
                                 text: item.name,
                                 detailView: AnyView(StarshipRouter.showDetail(starship: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -68,7 +69,7 @@ struct FilmDetailView: View {
                             GridCellView(
                                 text: item.name,
                                 detailView: AnyView(VehicleRouter.showDetail(vehicle: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -102,7 +103,7 @@ struct FilmDetailView: View {
     var body: some View {
         GeometryReader { geo in
             BackgroundView(size: geo.size) {
-                detail()
+                detail(size: geo.size)
             }
             .navigationTitle("Starships")
             .navigationBarTitleDisplayMode(.inline)

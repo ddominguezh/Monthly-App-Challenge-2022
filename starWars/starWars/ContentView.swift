@@ -20,7 +20,7 @@ struct ContentView: View {
                 VStack{
                     Image(image)
                     Spacer()
-                    Text(name)
+                    Text(LocalizedStringKey(name))
                         .foregroundColor(.white)
                 }.padding(16)
             }
@@ -35,32 +35,32 @@ struct ContentView: View {
                     LazyVGrid(columns: gridItemLayout, spacing: 16.0) {
                         cell(
                             destination: AnyView(FilmRouter.showList()),
-                            name: "Films",
+                            name: "films",
                             image: "films"
                         )
                         cell(
                             destination: AnyView(PeopleRouter.showList()),
-                            name: "Peoples",
+                            name: "peoples",
                             image: "peoples"
                         )
                         cell(
                             destination: AnyView(PlanetRouter.showList()),
-                            name: "Planets",
+                            name: "planets",
                             image: "planets"
                         )
                         cell(
                             destination: AnyView(SpeccyRouter.showList()),
-                            name: "Species",
+                            name: "species",
                             image: "species"
                         )
                         cell(
                             destination: AnyView(StarshipRouter.showList()),
-                            name: "Starships",
+                            name: "starships",
                             image: "starships"
                         )
                         cell(
                             destination: AnyView(VehicleRouter.showList()),
-                            name: "Vehicles",
+                            name: "vehicles",
                             image: "vehicles"
                         )
                     }

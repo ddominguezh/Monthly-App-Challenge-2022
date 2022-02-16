@@ -6,13 +6,14 @@ struct JsonImage: Encodable {
 }
 
 private var items: [JsonImage] = [JsonImage]()
-/*
+
 private func films(url: String) {
+    let imageApi = ImageAPIImpl()
     if url.isEmpty {
         FilmAPIImpl().search(
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.title, image: DonwloadImage(name: $0.title).getFirstImage()))
+                    items.append(JsonImage(name: $0.title, image: imageApi.getUrlImage(name: $0.title)))
                 }
                 if !result.next.isEmpty {
                     films(url: result.next)
@@ -27,7 +28,7 @@ private func films(url: String) {
             url: url,
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.title, image: DonwloadImage(name: $0.title).getFirstImage()))
+                    items.append(JsonImage(name: $0.title, image: imageApi.getUrlImage(name: $0.title)))
                 }
                 if !result.next.isEmpty {
                     films(url: result.next)
@@ -41,11 +42,12 @@ private func films(url: String) {
 }
 
 private func species(url: String) {
+    let imageApi = ImageAPIImpl()
     if url.isEmpty {
         SpeccyAPIImpl().search(
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
+                    items.append(JsonImage(name: $0.name, image: imageApi.getUrlImage(name: $0.name)))
                 }
                 if !result.next.isEmpty {
                     species(url: result.next)
@@ -60,7 +62,7 @@ private func species(url: String) {
             url: url,
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
+                    items.append(JsonImage(name: $0.name, image: imageApi.getUrlImage(name: $0.name)))
                 }
                 if !result.next.isEmpty {
                     species(url: result.next)
@@ -74,11 +76,12 @@ private func species(url: String) {
 }
 
 private func vehicles(url: String) {
+    let imageApi = ImageAPIImpl()
     if url.isEmpty {
         VehicleAPIImpl().search(
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
+                    items.append(JsonImage(name: $0.name, image: imageApi.getUrlImage(name: $0.name)))
                 }
                 if !result.next.isEmpty {
                     vehicles(url: result.next)
@@ -93,7 +96,7 @@ private func vehicles(url: String) {
             url: url,
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
+                    items.append(JsonImage(name: $0.name, image: imageApi.getUrlImage(name: $0.name)))
                 }
                 if !result.next.isEmpty {
                     vehicles(url: result.next)
@@ -107,12 +110,13 @@ private func vehicles(url: String) {
 }
 
 private func startships(url: String) {
+    let imageApi = ImageAPIImpl()
     if url.isEmpty {
         StarshipAPIImpl().search(
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
-                    sleep(2)
+                    items.append(JsonImage(name: $0.name, image: imageApi.getUrlImage(name: $0.name)))
+                    
                 }
                 if !result.next.isEmpty {
                     startships(url: result.next)
@@ -127,8 +131,8 @@ private func startships(url: String) {
             url: url,
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
-                    sleep(2)
+                    items.append(JsonImage(name: $0.name, image: imageApi.getUrlImage(name: $0.name)))
+                    
                 }
                 if !result.next.isEmpty {
                     startships(url: result.next)
@@ -142,12 +146,13 @@ private func startships(url: String) {
 }
  
 private func planets(url: String) {
+    let imageApi = ImageAPIImpl()
     if url.isEmpty {
         PlanetAPIImpl().search(
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
-                    sleep(2)
+                    items.append(JsonImage(name: $0.name, image: imageApi.getUrlImage(name: $0.name)))
+                    
                 }
                 if !result.next.isEmpty {
                     planets(url: result.next)
@@ -162,8 +167,7 @@ private func planets(url: String) {
             url: url,
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
-                    sleep(2)
+                    items.append(JsonImage(name: $0.name, image: imageApi.getUrlImage(name: $0.name)))
                 }
                 if !result.next.isEmpty {
                     planets(url: result.next)
@@ -175,13 +179,14 @@ private func planets(url: String) {
             })
     }
 }
- */
+ 
 private func peoples(url: String) {
+    let imageApi = ImageAPIImpl()
     if url.isEmpty {
         PeopleAPIImpl().search(
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
+                    items.append(JsonImage(name: $0.name, image: imageApi.getUrlImage(name: $0.name)))
                 }
                 if !result.next.isEmpty {
                     peoples(url: result.next)
@@ -196,7 +201,7 @@ private func peoples(url: String) {
             url: url,
             completion: { result in
                 result.results.forEach {
-                    items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
+                    items.append(JsonImage(name: $0.name, image: imageApi.getUrlImage(name: $0.name)))
                 }
                 if !result.next.isEmpty {
                     peoples(url: result.next)
@@ -216,4 +221,9 @@ private func printJson() {
     print(String(data: result, encoding: String.Encoding.utf8))
 }
 
- peoples(url: String.Empty)
+films(url: String.Empty)
+species(url: String.Empty)
+vehicles(url: String.Empty)
+startships(url: String.Empty)
+planets(url: String.Empty)
+peoples(url: String.Empty)

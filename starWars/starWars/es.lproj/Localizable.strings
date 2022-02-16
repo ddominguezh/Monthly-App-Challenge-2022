@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  starWars
+
+  Created by Diego Alberto Dominguez Herreros on 16/2/22.
+  
+*/
+
+"films" = "Películas";
+"peoples" = "Personajes";
+"planets" = "Planetas";
+"species" = "Especies";
+"starships" = "Naves";
+"vehicles" = "Vehículos";

@@ -11,10 +11,11 @@ struct StarshipDetailView: View {
     
     @StateObject var model: StarshipDetailViewModel
     
-    fileprivate func detail() -> some View {
+    fileprivate func detail(size: CGSize) -> some View {
         VStack {
             if !model.starship.name.isEmpty {
                 ImageView(name: model.starship.name)
+                    .frame(width: 100, height: 100)
             }
             ScrollView {
                 self.information()
@@ -25,7 +26,7 @@ struct StarshipDetailView: View {
                             GridCellView(
                                 text: item.title,
                                 detailView: AnyView(FilmRouter.showDetail(film: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -36,7 +37,7 @@ struct StarshipDetailView: View {
                             GridCellView(
                                 text: item.name,
                                 detailView: AnyView(PeopleRouter.showDetail(people: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -81,7 +82,7 @@ struct StarshipDetailView: View {
     var body: some View {
         GeometryReader { geo in
             BackgroundView(size: geo.size) {
-                detail()
+                detail(size: geo.size)
             }
             .navigationTitle("Starships")
             .navigationBarTitleDisplayMode(.inline)

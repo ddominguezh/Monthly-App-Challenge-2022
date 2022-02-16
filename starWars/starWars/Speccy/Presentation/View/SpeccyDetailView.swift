@@ -10,10 +10,11 @@ import SwiftUI
 struct SpeccyDetailView: View {
     @StateObject var model: SpeccyDetailViewModel
     
-    fileprivate func detail() -> some View {
+    fileprivate func detail(size: CGSize) -> some View {
         VStack {
             if !model.speccy.name.isEmpty {
                 ImageView(name: model.speccy.name)
+                    .frame(width: 100, height: 100)
             }
             ScrollView {
                 self.information()
@@ -24,7 +25,7 @@ struct SpeccyDetailView: View {
                             GridCellView(
                                 text: item.title,
                                 detailView: AnyView(FilmRouter.showDetail(film: item))
-                            )
+                            ).frame(minWidth: size.width / 2, maxWidth: 160)
                         }
                     }
                 }
@@ -35,7 +36,7 @@ struct SpeccyDetailView: View {
                             GridCellView(
                                 text: item.name,
                                 detailView: AnyView(PeopleRouter.showDetail(people: item))
-                            )
+                            ).frame(width: size.width / 2)
                         }
                     }
                 }
@@ -73,7 +74,7 @@ struct SpeccyDetailView: View {
     var body: some View {
         GeometryReader { geo in
             BackgroundView(size: geo.size) {
-                detail()
+                detail(size: geo.size)
             }
             .navigationTitle("Starships")
             .navigationBarTitleDisplayMode(.inline)

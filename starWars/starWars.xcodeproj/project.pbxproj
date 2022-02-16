@@ -171,6 +171,8 @@
 		26F7E03A27B6C80D00982E9B /* InformationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03927B6C80D00982E9B /* InformationItemView.swift */; };
 		26F7E03C27B6CB3500982E9B /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03B27B6CB3500982E9B /* Title.swift */; };
 		26F7E03E27B6CF7A00982E9B /* GridHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03D27B6CF7A00982E9B /* GridHView.swift */; };
+		26F7E04027BB631500982E9B /* Image+Cropped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03F27BB631500982E9B /* Image+Cropped.swift */; };
+		26F7E04327BCBB8000982E9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26F7E04527BCBB8000982E9B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -359,6 +361,9 @@
 		26F7E03927B6C80D00982E9B /* InformationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationItemView.swift; sourceTree = "<group>"; };
 		26F7E03B27B6CB3500982E9B /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		26F7E03D27B6CF7A00982E9B /* GridHView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridHView.swift; sourceTree = "<group>"; };
+		26F7E03F27BB631500982E9B /* Image+Cropped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Cropped.swift"; sourceTree = "<group>"; };
+		26F7E04427BCBB8000982E9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		26F7E04627BCBB8400982E9B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +429,7 @@
 				26F7E01127B621D800982E9B /* images.json */,
 				26DDCC0F27ACFC46001C98C3 /* Preview Content */,
 				26F7E00027B38FBF00982E9B /* JsonImages.playground */,
+				26F7E04527BCBB8000982E9B /* Localizable.strings */,
 			);
 			path = starWars;
 			sourceTree = "<group>";
@@ -496,6 +502,7 @@
 				26F7E03827B63D1C00982E9B /* Exception */,
 				26DDCCAF27AD8FBB001C98C3 /* String+Empty.swift */,
 				26F7DFE827B0EA8800982E9B /* Color+App.swift */,
+				26F7E03F27BB631500982E9B /* Image+Cropped.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1814,6 +1821,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 26DDCBFD27ACFC37001C98C3;
 			productRefGroup = 26DDCC0727ACFC37001C98C3 /* Products */;
@@ -1833,6 +1841,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26DDCC1127ACFC46001C98C3 /* Preview Assets.xcassets in Resources */,
+				26F7E04327BCBB8000982E9B /* Localizable.strings in Resources */,
 				26DDCC0E27ACFC46001C98C3 /* Assets.xcassets in Resources */,
 				26F7E01227B621D800982E9B /* images.json in Resources */,
 			);
@@ -1932,6 +1941,7 @@
 				26DDCD5C27AE77B5001C98C3 /* FilmModel.swift in Sources */,
 				26DDCCBB27AD9C05001C98C3 /* StarshipListView.swift in Sources */,
 				26DDCD6827AE7D9C001C98C3 /* FilmRepository.swift in Sources */,
+				26F7E04027BB631500982E9B /* Image+Cropped.swift in Sources */,
 				26DDCC7D27AD491D001C98C3 /* PlanetAPIImpl.swift in Sources */,
 				26DDCDFA27AEFE36001C98C3 /* VehicleAPIEntity.swift in Sources */,
 				26DDCDAA27AE82CC001C98C3 /* SpeccyDetailViewModel.swift in Sources */,
@@ -2051,6 +2061,18 @@
 			targetProxy = 26DDCC2127ACFC46001C98C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26F7E04527BCBB8000982E9B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26F7E04427BCBB8000982E9B /* en */,
+				26F7E04627BCBB8400982E9B /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		26DDCC2827ACFC46001C98C3 /* Debug */ = {
