@@ -19,6 +19,15 @@ struct PeopleDetailView: View {
             }
             ScrollView {
                 self.information()
+                if !model.homeworld.name.isEmpty {
+                    Title("homeworld")
+                    GridHView {
+                        GridCellView(
+                            text: model.homeworld.name,
+                            detailView: AnyView(PlanetRouter.showDetail(planet: model.homeworld))
+                        ).frame(minWidth: size.width / 2, maxWidth: 160)
+                    }
+                }
                 if model.films.count > 0 {
                     Title("films")
                     GridHView {
@@ -90,7 +99,6 @@ struct PeopleDetailView: View {
             InformationItemView(name: "eye-color", value: self.model.people.eyeColor)
             InformationItemView(name: "birth-year", value: self.model.people.birthYear)
             InformationItemView(name: "gender", value: self.model.people.gender)
-            InformationItemView(name: "homeworld", value: self.model.people.homeworld)
         }
     }
     

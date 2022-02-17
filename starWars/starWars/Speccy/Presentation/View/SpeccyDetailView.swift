@@ -18,6 +18,15 @@ struct SpeccyDetailView: View {
             }
             ScrollView {
                 self.information()
+                if !model.homeworld.name.isEmpty {
+                    Title("homeworld")
+                    GridHView {
+                        GridCellView(
+                            text: model.homeworld.name,
+                            detailView: AnyView(PlanetRouter.showDetail(planet: model.homeworld))
+                        ).frame(minWidth: size.width / 2, maxWidth: 160)
+                    }
+                }
                 if model.films.count > 0 {
                     Title("films")
                     GridHView {
@@ -66,7 +75,6 @@ struct SpeccyDetailView: View {
             InformationItemView(name: "hair-colors", value: self.model.speccy.hairColors)
             InformationItemView(name: "eye-colors", value: self.model.speccy.eyeColors)
             InformationItemView(name: "average-lifespan", value: self.model.speccy.averageLifespan)
-            InformationItemView(name: "homeworld", value: self.model.speccy.homeworld)
             InformationItemView(name: "language", value: self.model.speccy.language)
         }
     }

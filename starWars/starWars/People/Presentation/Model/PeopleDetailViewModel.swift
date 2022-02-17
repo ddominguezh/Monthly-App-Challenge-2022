@@ -14,12 +14,14 @@ class PeopleDetailViewModel: ObservableObject {
     let speccyUseCase = DetailSpeccyUseCase(repository: SpeccyRepositoryImpl(dataSource: SpeccyAPIImpl()))
     let vehicleUseCase = DetailVehicleUseCase(repository: VehicleRepositoryImpl(dataSource: VehicleAPIImpl()))
     let starshipUseCase = DetailStarshipUseCase(repository: StarshipRepositoryImpl(dataSource: StarshipAPIImpl()))
+    let planetUseCase = DetailPlanetUseCase(repository: PlanetRepositoryImpl(dataSource: PlanetAPIImpl()))
     private var url: String
     @Published var people: PeopleModel = PeopleModel.NullObject
     @Published var films: [FilmModel] = [FilmModel]()
     @Published var species: [SpeccyModel] = [SpeccyModel]()
     @Published var vehicles: [VehicleModel] = [VehicleModel]()
     @Published var starships: [StarshipModel] = [StarshipModel]()
+    @Published var homeworld: PlanetModel = PlanetModel.NullObject
     @Published var fetching = false
     @Published var errorMessage = ""
     @Published var hasError = false
@@ -39,6 +41,7 @@ class PeopleDetailViewModel: ObservableObject {
                 self.loadSpecies()
                 self.loadVehicles()
                 self.loadStarships()
+                self.loadHomeworld()
             case .failure(let error):
                 self.people = PeopleModel.NullObject
                 self.errorMessage = error.localizedDescription
@@ -104,6 +107,18 @@ class PeopleDetailViewModel: ObservableObject {
                     self.errorMessage = error.localizedDescription
                     self.hasError = true
                 }
+            }
+        }
+    }
+
+    private func loadHomeworld() {
+        planetUseCase.execute(url: self.people.homeworld) {
+            switch $0 {
+            case .success(let planet):
+                self.homeworld = planet
+            case .failure(let error):
+                self.errorMessage = error.localizedDescription
+                self.hasError = true
             }
         }
     }
