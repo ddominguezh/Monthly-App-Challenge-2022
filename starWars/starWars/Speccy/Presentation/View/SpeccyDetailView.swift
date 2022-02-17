@@ -19,7 +19,7 @@ struct SpeccyDetailView: View {
             ScrollView {
                 self.information()
                 if model.films.count > 0 {
-                    Title("Films")
+                    Title("films")
                     GridHView {
                         ForEach(model.films){ item in
                             GridCellView(
@@ -30,7 +30,7 @@ struct SpeccyDetailView: View {
                     }
                 }
                 if model.peoples.count > 0 {
-                    Title("Peoples")
+                    Title("peoples")
                     GridHView {
                         ForEach(model.peoples){ item in
                             GridCellView(
@@ -59,15 +59,15 @@ struct SpeccyDetailView: View {
     
     fileprivate func information() -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            InformationItemView(name: "Classification", value: self.model.speccy.classification)
-            InformationItemView(name: "Designation", value: self.model.speccy.designation)
-            InformationItemView(name: "Average Height", value: self.model.speccy.averageHeight)
-            InformationItemView(name: "Skin Colors", value: self.model.speccy.skinColors)
-            InformationItemView(name: "Hair Colors", value: self.model.speccy.hairColors)
-            InformationItemView(name: "Eye Colors", value: self.model.speccy.eyeColors)
-            InformationItemView(name: "Average Lifespan", value: self.model.speccy.averageLifespan)
-            InformationItemView(name: "Homeworld", value: self.model.speccy.homeworld)
-            InformationItemView(name: "Language", value: self.model.speccy.language)
+            InformationItemView(name: "classification", value: self.model.speccy.classification)
+            InformationItemView(name: "designation", value: self.model.speccy.designation)
+            InformationItemView(name: "average-height", value: self.model.speccy.averageHeight)
+            InformationItemView(name: "skin-colors", value: self.model.speccy.skinColors)
+            InformationItemView(name: "hair-colors", value: self.model.speccy.hairColors)
+            InformationItemView(name: "eye-colors", value: self.model.speccy.eyeColors)
+            InformationItemView(name: "average-lifespan", value: self.model.speccy.averageLifespan)
+            InformationItemView(name: "homeworld", value: self.model.speccy.homeworld)
+            InformationItemView(name: "language", value: self.model.speccy.language)
         }
     }
     

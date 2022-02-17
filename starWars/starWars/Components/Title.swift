@@ -13,7 +13,7 @@ struct Title: View {
         self.value = value
     }
     var body: some View {
-        Text(self.value)
+        Text(LocalizedStringKey(self.value))
             .bold()
             .font(.system(size: 30))
             .frame(maxWidth: .infinity, alignment: .leading)

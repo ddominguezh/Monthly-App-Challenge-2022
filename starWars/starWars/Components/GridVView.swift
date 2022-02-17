@@ -38,7 +38,7 @@ struct GridVView<Content>: View where Content: View {
                 Button(action: {
                     self.delegate?.more()
                 }, label: {
-                    Text("More...")
+                    Text(LocalizedStringKey("more"))
                         .foregroundColor(.white)
                 })
             }

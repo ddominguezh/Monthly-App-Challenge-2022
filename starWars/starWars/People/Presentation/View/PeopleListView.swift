@@ -46,7 +46,7 @@ struct PeopleListView: View {
                     grid()
                 }
             }
-            .navigationTitle("Peoples")
+            .navigationTitle(LocalizedStringKey("peoples"))
             .navigationBarTitleDisplayMode(.inline)
         }
     }

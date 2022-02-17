@@ -44,7 +44,7 @@ struct StarshipListView: View {
                     grid()
                 }
             }
-            .navigationTitle("Starships")
+            .navigationTitle(LocalizedStringKey("starships"))
             .navigationBarTitleDisplayMode(.inline)
         }
     }

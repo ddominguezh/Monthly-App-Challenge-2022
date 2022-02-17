@@ -27,7 +27,7 @@ struct ImageView: View {
         .task {
             model.load(name: self.name)
         }
-        .background(Color.background)
+        //.background(Color.background)
     }
 }
 

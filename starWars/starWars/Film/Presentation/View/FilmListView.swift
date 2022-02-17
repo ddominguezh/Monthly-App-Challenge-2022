@@ -47,7 +47,7 @@ struct FilmListView: View {
                     grid()
                 }
             }
-            .navigationTitle("Films")
+            .navigationTitle(LocalizedStringKey("films"))
             .navigationBarTitleDisplayMode(.inline)
         }
     }

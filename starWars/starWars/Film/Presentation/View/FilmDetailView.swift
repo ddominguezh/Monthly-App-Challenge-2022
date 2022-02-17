@@ -19,7 +19,7 @@ struct FilmDetailView: View {
             ScrollView {
                 self.information()
                 if model.planets.count > 0 {
-                    Title("Planets")
+                    Title("planets")
                     GridHView {
                         ForEach(model.planets){ item in
                             GridCellView(
@@ -30,7 +30,7 @@ struct FilmDetailView: View {
                     }
                 }
                 if model.characeters.count > 0 {
-                    Title("Characters")
+                    Title("characters")
                     GridHView {
                         ForEach(model.characeters){ item in
                             GridCellView(
@@ -41,7 +41,7 @@ struct FilmDetailView: View {
                     }
                 }
                 if model.species.count > 0 {
-                    Title("Species")
+                    Title("species")
                     GridHView {
                         ForEach(model.species){ item in
                             GridCellView(
@@ -52,7 +52,7 @@ struct FilmDetailView: View {
                     }
                 }
                 if model.starships.count > 0 {
-                    Title("Starships")
+                    Title("starships")
                     GridHView {
                         ForEach(model.starships){ item in
                             GridCellView(
@@ -63,7 +63,7 @@ struct FilmDetailView: View {
                     }
                 }
                 if model.vehicles.count > 0 {
-                    Title("Vehicles")
+                    Title("vehicles")
                     GridHView {
                         ForEach(model.vehicles){ item in
                             GridCellView(
@@ -92,11 +92,11 @@ struct FilmDetailView: View {
     
     fileprivate func information() -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            InformationItemView(name: "Episode", value: "\(self.model.film.episodeId)")
-            InformationItemView(name: "Opening Crawl", value: self.model.film.openingCrawl)
-            InformationItemView(name: "Director", value: self.model.film.director)
-            InformationItemView(name: "Producer", value: self.model.film.producer)
-            InformationItemView(name: "Release Date", value: self.model.film.releaseDate)
+            InformationItemView(name: "episode", value: "\(self.model.film.episodeId)")
+            InformationItemView(name: "opening-crawl", value: self.model.film.openingCrawl)
+            InformationItemView(name: "director", value: self.model.film.director)
+            InformationItemView(name: "producer", value: self.model.film.producer)
+            InformationItemView(name: "release-date", value: self.model.film.releaseDate)
         }
     }
     

@@ -20,7 +20,7 @@ struct PlanetDetailView: View {
             ScrollView {
                 self.information()
                 if model.films.count > 0 {
-                    Title("Films")
+                    Title("films")
                     GridHView {
                         ForEach(model.films){ item in
                             GridCellView(
@@ -31,7 +31,7 @@ struct PlanetDetailView: View {
                     }
                 }
                 if model.residents.count > 0 {
-                    Title("Residents")
+                    Title("residents")
                     GridHView {
                         ForEach(model.residents){ item in
                             GridCellView(
@@ -60,14 +60,14 @@ struct PlanetDetailView: View {
     
     fileprivate func information() -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            InformationItemView(name: "Rotation Period", value: self.model.planet.rotationPeriod)
-            InformationItemView(name: "Orbital Period", value: self.model.planet.orbitalPeriod)
-            InformationItemView(name: "Diameter", value: self.model.planet.diameter)
-            InformationItemView(name: "Climate", value: self.model.planet.climate)
-            InformationItemView(name: "Gravity", value: self.model.planet.gravity)
-            InformationItemView(name: "Terrain", value: self.model.planet.terrain)
-            InformationItemView(name: "Surface Water", value: self.model.planet.surfaceWater)
-            InformationItemView(name: "Population:", value: self.model.planet.population)
+            InformationItemView(name: "rotation-period", value: self.model.planet.rotationPeriod)
+            InformationItemView(name: "orbital-period", value: self.model.planet.orbitalPeriod)
+            InformationItemView(name: "diameter", value: self.model.planet.diameter)
+            InformationItemView(name: "climate", value: self.model.planet.climate)
+            InformationItemView(name: "gravity", value: self.model.planet.gravity)
+            InformationItemView(name: "terrain", value: self.model.planet.terrain)
+            InformationItemView(name: "surface-water", value: self.model.planet.surfaceWater)
+            InformationItemView(name: "population", value: self.model.planet.population)
         }
     }
     

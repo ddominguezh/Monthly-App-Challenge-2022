@@ -20,7 +20,7 @@ struct StarshipDetailView: View {
             ScrollView {
                 self.information()
                 if model.films.count > 0 {
-                    Title("Films")
+                    Title("films")
                     GridHView {
                         ForEach(model.films){ item in
                             GridCellView(
@@ -31,7 +31,7 @@ struct StarshipDetailView: View {
                     }
                 }
                 if model.pilots.count > 0 {
-                    Title("Pilots")
+                    Title("pilots")
                     GridHView {
                         ForEach(model.pilots){ item in
                             GridCellView(
@@ -61,20 +61,20 @@ struct StarshipDetailView: View {
     fileprivate func information() -> some View {
         VStack(alignment: .leading, spacing: 8) {
             VStack(alignment: .leading, spacing: 8) {
-                InformationItemView(name: "Model", value: self.model.starship.model)
-                InformationItemView(name: "Manufacturer", value: self.model.starship.manufacturer)
-                InformationItemView(name: "Cost In Credits", value: self.model.starship.costInCredits)
-                InformationItemView(name: "Length", value: self.model.starship.length)
-                InformationItemView(name: "Max Atmosphering Speed", value: self.model.starship.maxAtmospheringSpeed)
-                InformationItemView(name: "Crew", value: self.model.starship.crew)
+                InformationItemView(name: "model", value: self.model.starship.model)
+                InformationItemView(name: "manufacturer", value: self.model.starship.manufacturer)
+                InformationItemView(name: "cost-in-credits", value: self.model.starship.costInCredits)
+                InformationItemView(name: "length", value: self.model.starship.length)
+                InformationItemView(name: "max-atmosphering-speed", value: self.model.starship.maxAtmospheringSpeed)
+                InformationItemView(name: "crew", value: self.model.starship.crew)
             }
             VStack(alignment: .leading, spacing: 8) {
-                InformationItemView(name: "Passengers", value: self.model.starship.passengers)
-                InformationItemView(name: "Capacity", value: self.model.starship.cargoCapacity)
-                InformationItemView(name: "Consumables", value: self.model.starship.consumables)
-                InformationItemView(name: "Hyperdrive Rating", value: self.model.starship.hyperdriveRating)
+                InformationItemView(name: "passengers", value: self.model.starship.passengers)
+                InformationItemView(name: "capacity", value: self.model.starship.cargoCapacity)
+                InformationItemView(name: "consumables", value: self.model.starship.consumables)
+                InformationItemView(name: "hyperdrive-rating", value: self.model.starship.hyperdriveRating)
                 InformationItemView(name: "MGLT", value: self.model.starship.MGLT)
-                InformationItemView(name: "Starship Class", value: self.model.starship.starshipClass)
+                InformationItemView(name: "starship-class", value: self.model.starship.starshipClass)
             }
         }
     }

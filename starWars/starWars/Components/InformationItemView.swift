@@ -9,12 +9,16 @@ import SwiftUI
 
 struct InformationItemView: View {
     
-    var name: String
+    var localizedKey: LocalizedStringKey
     var value: String
+    init(name: String, value: String) {
+        self.localizedKey = LocalizedStringKey(name)
+        self.value = value
+    }
     
     var body: some View {
         HStack(alignment: VerticalAlignment.top) {
-            Text("\(self.name):")
+            Text(self.localizedKey)
                 .font(.system(size: 14))
             Spacer()
             Text(self.value)

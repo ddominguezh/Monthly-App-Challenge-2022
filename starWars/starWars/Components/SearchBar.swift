@@ -24,7 +24,7 @@ struct SearchBar: View {
                 .foregroundColor(Color.black)
             ZStack(alignment: Alignment.leading) {
                 if self.text.isEmpty {
-                    Text("Search...")
+                    Text(LocalizedStringKey("search"))
                         .foregroundColor(Color.black)
                 }
                 TextField(

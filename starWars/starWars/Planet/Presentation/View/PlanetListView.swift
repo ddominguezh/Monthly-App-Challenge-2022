@@ -44,7 +44,7 @@ struct PlanetListView: View {
                     grid()
                 }
             }
-            .navigationTitle("Planets")
+            .navigationTitle(LocalizedStringKey("planets"))
             .navigationBarTitleDisplayMode(.inline)
         }
     }

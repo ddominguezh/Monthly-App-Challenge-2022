@@ -19,7 +19,7 @@ struct VehicleDetailView: View {
             ScrollView {
                 self.information()
                 if model.films.count > 0 {
-                    Title("Films")
+                    Title("films")
                     GridHView {
                         ForEach(model.films){ item in
                             GridCellView(
@@ -30,7 +30,7 @@ struct VehicleDetailView: View {
                     }
                 }
                 if model.pilots.count > 0 {
-                    Title("Pilots")
+                    Title("pilots")
                     GridHView {
                         ForEach(model.pilots){ item in
                             GridCellView(
@@ -59,15 +59,15 @@ struct VehicleDetailView: View {
     
     fileprivate func information() -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            InformationItemView(name: "Manufacturer", value: self.model.vehicle.manufacturer)
-            InformationItemView(name: "Cost In Credits", value: self.model.vehicle.costInCredits)
-            InformationItemView(name: "Length", value: self.model.vehicle.length)
-            InformationItemView(name: "Max Atmosphering Speed", value: self.model.vehicle.maxAtmospheringSpeed)
-            InformationItemView(name: "Crew", value: self.model.vehicle.crew)
-            InformationItemView(name: "Passengers", value: self.model.vehicle.passengers)
-            InformationItemView(name: "Capacity", value: self.model.vehicle.cargoCapacity)
-            InformationItemView(name: "Consumables", value: self.model.vehicle.consumables)
-            InformationItemView(name: "Vehicle Class", value: self.model.vehicle.vehicleClass)
+            InformationItemView(name: "manufacturer", value: self.model.vehicle.manufacturer)
+            InformationItemView(name: "cost-in-credits", value: self.model.vehicle.costInCredits)
+            InformationItemView(name: "length", value: self.model.vehicle.length)
+            InformationItemView(name: "max-atmosphering-speed", value: self.model.vehicle.maxAtmospheringSpeed)
+            InformationItemView(name: "crew", value: self.model.vehicle.crew)
+            InformationItemView(name: "passengers", value: self.model.vehicle.passengers)
+            InformationItemView(name: "capacity", value: self.model.vehicle.cargoCapacity)
+            InformationItemView(name: "consumables", value: self.model.vehicle.consumables)
+            InformationItemView(name: "vehicle-class", value: self.model.vehicle.vehicleClass)
         }
     }
     

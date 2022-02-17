@@ -44,7 +44,7 @@ struct VehicleListView: View {
                     grid()
                 }
             }
-            .navigationTitle("Vehicles")
+            .navigationTitle(LocalizedStringKey("vehicles"))
             .navigationBarTitleDisplayMode(.inline)
         }
     }

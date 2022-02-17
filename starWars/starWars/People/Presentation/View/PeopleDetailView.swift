@@ -20,7 +20,7 @@ struct PeopleDetailView: View {
             ScrollView {
                 self.information()
                 if model.films.count > 0 {
-                    Title("Films")
+                    Title("films")
                     GridHView {
                         ForEach(model.films){ item in
                             GridCellView(
@@ -31,7 +31,7 @@ struct PeopleDetailView: View {
                     }
                 }
                 if model.species.count > 0 {
-                    Title("Species")
+                    Title("species")
                     GridHView {
                         ForEach(model.species){ item in
                             GridCellView(
@@ -42,7 +42,7 @@ struct PeopleDetailView: View {
                     }
                 }
                 if model.starships.count > 0 {
-                    Title("Starships")
+                    Title("starships")
                     GridHView {
                         ForEach(model.starships){ item in
                             GridCellView(
@@ -53,7 +53,7 @@ struct PeopleDetailView: View {
                     }
                 }
                 if model.vehicles.count > 0 {
-                    Title("Vehicles")
+                    Title("vehicles")
                     GridHView {
                         ForEach(model.vehicles){ item in
                             GridCellView(
@@ -83,14 +83,14 @@ struct PeopleDetailView: View {
     
     fileprivate func information() -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            InformationItemView(name: "Height", value: self.model.people.height)
-            InformationItemView(name: "Mass", value: self.model.people.mass)
-            InformationItemView(name: "Hair Color", value: self.model.people.hairColor)
-            InformationItemView(name: "Skin Color", value: self.model.people.skinColor)
-            InformationItemView(name: "Eye Color", value: self.model.people.eyeColor)
-            InformationItemView(name: "Birth Year", value: self.model.people.birthYear)
-            InformationItemView(name: "Gender", value: self.model.people.gender)
-            InformationItemView(name: "Homeworld", value: self.model.people.homeworld)
+            InformationItemView(name: "height", value: self.model.people.height)
+            InformationItemView(name: "mass", value: self.model.people.mass)
+            InformationItemView(name: "hair-color", value: self.model.people.hairColor)
+            InformationItemView(name: "skin-color", value: self.model.people.skinColor)
+            InformationItemView(name: "eye-color", value: self.model.people.eyeColor)
+            InformationItemView(name: "birth-year", value: self.model.people.birthYear)
+            InformationItemView(name: "gender", value: self.model.people.gender)
+            InformationItemView(name: "homeworld", value: self.model.people.homeworld)
         }
     }
     

@@ -44,7 +44,7 @@ struct SpeccyListView: View {
                     list()
                 }
             }
-            .navigationTitle("Species")
+            .navigationTitle(LocalizedStringKey("species"))
             .navigationBarTitleDisplayMode(.inline)
         }
     }
