@@ -173,6 +173,7 @@
 		26F7E03E27B6CF7A00982E9B /* GridHView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03D27B6CF7A00982E9B /* GridHView.swift */; };
 		26F7E04027BB631500982E9B /* Image+Cropped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03F27BB631500982E9B /* Image+Cropped.swift */; };
 		26F7E04327BCBB8000982E9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26F7E04527BCBB8000982E9B /* Localizable.strings */; };
+		26F7E04827BE596900982E9B /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E04727BE596900982E9B /* Line.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -364,6 +365,7 @@
 		26F7E03F27BB631500982E9B /* Image+Cropped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Cropped.swift"; sourceTree = "<group>"; };
 		26F7E04427BCBB8000982E9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26F7E04627BCBB8400982E9B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		26F7E04727BE596900982E9B /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1568,6 +1570,7 @@
 				26F7E00D27B5DD6B00982E9B /* BackgroundView.swift */,
 				26F7E03927B6C80D00982E9B /* InformationItemView.swift */,
 				26F7E03B27B6CB3500982E9B /* Title.swift */,
+				26F7E04727BE596900982E9B /* Line.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1977,6 +1980,7 @@
 				26DDCCD227ADA7DD001C98C3 /* PeopleRepository.swift in Sources */,
 				26DDCC6B27AD4617001C98C3 /* PlanetModel.swift in Sources */,
 				26DDCDAC27AE82D5001C98C3 /* VehicleDetailViewModel.swift in Sources */,
+				26F7E04827BE596900982E9B /* Line.swift in Sources */,
 				26DDCC6927AD45FE001C98C3 /* PeopleModel.swift in Sources */,
 				26DDCD6627AE7801001C98C3 /* SpeccyModel.swift in Sources */,
 				26F7E01F27B62DC000982E9B /* GetImageUseCase.swift in Sources */,

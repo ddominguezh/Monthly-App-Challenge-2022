@@ -20,8 +20,7 @@ struct PeopleDetailView: View {
             ScrollView {
                 self.information()
                 if !model.homeworld.name.isEmpty {
-                    Title("homeworld")
-                    GridHView {
+                    GridHView(title: "homeworld"){
                         GridCellView(
                             text: model.homeworld.name,
                             detailView: AnyView(PlanetRouter.showDetail(planet: model.homeworld))
@@ -29,8 +28,7 @@ struct PeopleDetailView: View {
                     }
                 }
                 if model.films.count > 0 {
-                    Title("films")
-                    GridHView {
+                    GridHView(title: "films"){
                         ForEach(model.films){ item in
                             GridCellView(
                                 text: item.title,
@@ -40,8 +38,7 @@ struct PeopleDetailView: View {
                     }
                 }
                 if model.species.count > 0 {
-                    Title("species")
-                    GridHView {
+                    GridHView(title: "species"){
                         ForEach(model.species){ item in
                             GridCellView(
                                 text: item.name,
@@ -51,8 +48,7 @@ struct PeopleDetailView: View {
                     }
                 }
                 if model.starships.count > 0 {
-                    Title("starships")
-                    GridHView {
+                    GridHView(title: "starships"){
                         ForEach(model.starships){ item in
                             GridCellView(
                                 text: item.name,
@@ -62,8 +58,7 @@ struct PeopleDetailView: View {
                     }
                 }
                 if model.vehicles.count > 0 {
-                    Title("vehicles")
-                    GridHView {
+                    GridHView(title: "vehicles"){
                         ForEach(model.vehicles){ item in
                             GridCellView(
                                 text: item.name,

@@ -20,8 +20,7 @@ struct PlanetDetailView: View {
             ScrollView {
                 self.information()
                 if model.films.count > 0 {
-                    Title("films")
-                    GridHView {
+                    GridHView(title: "films"){
                         ForEach(model.films){ item in
                             GridCellView(
                                 text: item.title,
@@ -31,8 +30,7 @@ struct PlanetDetailView: View {
                     }
                 }
                 if model.residents.count > 0 {
-                    Title("residents")
-                    GridHView {
+                    GridHView(title: "residents"){
                         ForEach(model.residents){ item in
                             GridCellView(
                                 text: item.name,

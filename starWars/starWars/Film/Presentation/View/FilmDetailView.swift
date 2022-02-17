@@ -19,8 +19,7 @@ struct FilmDetailView: View {
             ScrollView {
                 self.information()
                 if model.planets.count > 0 {
-                    Title("planets")
-                    GridHView {
+                    GridHView(title: "planets"){
                         ForEach(model.planets){ item in
                             GridCellView(
                                 text: item.name,
@@ -30,8 +29,7 @@ struct FilmDetailView: View {
                     }
                 }
                 if model.characeters.count > 0 {
-                    Title("characters")
-                    GridHView {
+                    GridHView(title: "characters"){
                         ForEach(model.characeters){ item in
                             GridCellView(
                                 text: item.name,
@@ -41,8 +39,7 @@ struct FilmDetailView: View {
                     }
                 }
                 if model.species.count > 0 {
-                    Title("species")
-                    GridHView {
+                    GridHView(title: "species"){
                         ForEach(model.species){ item in
                             GridCellView(
                                 text: item.name,
@@ -52,8 +49,7 @@ struct FilmDetailView: View {
                     }
                 }
                 if model.starships.count > 0 {
-                    Title("starships")
-                    GridHView {
+                    GridHView(title: "starships"){
                         ForEach(model.starships){ item in
                             GridCellView(
                                 text: item.name,
@@ -63,8 +59,7 @@ struct FilmDetailView: View {
                     }
                 }
                 if model.vehicles.count > 0 {
-                    Title("vehicles")
-                    GridHView {
+                    GridHView(title: "vehicles"){
                         ForEach(model.vehicles){ item in
                             GridCellView(
                                 text: item.name,

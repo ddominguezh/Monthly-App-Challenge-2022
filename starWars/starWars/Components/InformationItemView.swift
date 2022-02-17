@@ -17,12 +17,17 @@ struct InformationItemView: View {
     }
     
     var body: some View {
-        HStack(alignment: VerticalAlignment.top) {
-            Text(self.localizedKey)
-                .font(.system(size: 14))
-            Spacer()
-            Text(self.value)
-                .bold()
+        VStack {
+            HStack(alignment: VerticalAlignment.top) {
+                Text(self.localizedKey)
+                    .font(.system(size: 14))
+                Spacer()
+                Text(self.value)
+                    .bold()
+            }
+            Line()
+                .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                .frame(height: 1)
         }
     }
 }

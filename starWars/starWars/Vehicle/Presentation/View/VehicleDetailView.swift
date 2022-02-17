@@ -19,8 +19,7 @@ struct VehicleDetailView: View {
             ScrollView {
                 self.information()
                 if model.films.count > 0 {
-                    Title("films")
-                    GridHView {
+                    GridHView(title: "films"){
                         ForEach(model.films){ item in
                             GridCellView(
                                 text: item.title,
@@ -30,8 +29,7 @@ struct VehicleDetailView: View {
                     }
                 }
                 if model.pilots.count > 0 {
-                    Title("pilots")
-                    GridHView {
+                    GridHView(title: "pilots"){
                         ForEach(model.pilots){ item in
                             GridCellView(
                                 text: item.name,

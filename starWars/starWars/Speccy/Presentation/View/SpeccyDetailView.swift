@@ -19,8 +19,7 @@ struct SpeccyDetailView: View {
             ScrollView {
                 self.information()
                 if !model.homeworld.name.isEmpty {
-                    Title("homeworld")
-                    GridHView {
+                    GridHView(title: "homeworld"){
                         GridCellView(
                             text: model.homeworld.name,
                             detailView: AnyView(PlanetRouter.showDetail(planet: model.homeworld))
@@ -28,8 +27,7 @@ struct SpeccyDetailView: View {
                     }
                 }
                 if model.films.count > 0 {
-                    Title("films")
-                    GridHView {
+                    GridHView(title: "films"){
                         ForEach(model.films){ item in
                             GridCellView(
                                 text: item.title,
@@ -39,8 +37,7 @@ struct SpeccyDetailView: View {
                     }
                 }
                 if model.peoples.count > 0 {
-                    Title("peoples")
-                    GridHView {
+                    GridHView(title: "peoples"){
                         ForEach(model.peoples){ item in
                             GridCellView(
                                 text: item.name,
