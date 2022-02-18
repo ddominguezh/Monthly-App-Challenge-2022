@@ -14,8 +14,7 @@ struct PlanetDetailView: View {
     fileprivate func detail(size: CGSize) -> some View {
         VStack {
             if !model.planet.name.isEmpty {
-                ImageView(name: model.planet.name)
-                    .frame(width: 100, height: 100)
+                DetailImage(name: model.planet.name)
             }
             ScrollView {
                 self.information()

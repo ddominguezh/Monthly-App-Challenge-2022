@@ -174,6 +174,7 @@
 		26F7E04027BB631500982E9B /* Image+Cropped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E03F27BB631500982E9B /* Image+Cropped.swift */; };
 		26F7E04327BCBB8000982E9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26F7E04527BCBB8000982E9B /* Localizable.strings */; };
 		26F7E04827BE596900982E9B /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E04727BE596900982E9B /* Line.swift */; };
+		26F7E04A27C01F9000982E9B /* DetailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E04927C01F9000982E9B /* DetailImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -366,6 +367,7 @@
 		26F7E04427BCBB8000982E9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26F7E04627BCBB8400982E9B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26F7E04727BE596900982E9B /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		26F7E04927C01F9000982E9B /* DetailImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1571,6 +1573,7 @@
 				26F7E03927B6C80D00982E9B /* InformationItemView.swift */,
 				26F7E03B27B6CB3500982E9B /* Title.swift */,
 				26F7E04727BE596900982E9B /* Line.swift */,
+				26F7E04927C01F9000982E9B /* DetailImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1972,6 +1975,7 @@
 				26DDCC9127AD50F6001C98C3 /* PlanetListAPIEntity.swift in Sources */,
 				26DDCCC527AD9C53001C98C3 /* PlanetDetailViewModel.swift in Sources */,
 				26DDCC9927AD5388001C98C3 /* PlanetListModel.swift in Sources */,
+				26F7E04A27C01F9000982E9B /* DetailImage.swift in Sources */,
 				26DDCDF827AEFD0A001C98C3 /* FilmAPIEntity.swift in Sources */,
 				26DDCCE727ADAB11001C98C3 /* AllPeopleUseCase.swift in Sources */,
 				26F7DFFD27B2663600982E9B /* CustomProgressView.swift in Sources */,

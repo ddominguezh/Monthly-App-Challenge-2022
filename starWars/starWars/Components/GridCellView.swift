@@ -21,8 +21,11 @@ struct GridCellView: View {
                     .foregroundColor(.white)
                     .frame(minWidth: CGFloat.zero, maxWidth: .infinity, minHeight: 25, maxHeight: 50)
                     .background(Color.blackAlpha)
+                    .overlay(Rectangle().frame(width: nil, height: 3, alignment: .top).foregroundColor(Color.whiteAlpha), alignment: .top)
             }
             .cornerRadius(16.0)
+            .overlay(RoundedRectangle(cornerRadius: 16.0).stroke(Color.whiteAlpha, lineWidth: 3))
+            .padding(3)
         }
     }
 }

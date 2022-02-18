@@ -13,8 +13,7 @@ struct SpeccyDetailView: View {
     fileprivate func detail(size: CGSize) -> some View {
         VStack {
             if !model.speccy.name.isEmpty {
-                ImageView(name: model.speccy.name)
-                    .frame(width: 100, height: 100)
+                DetailImage(name: model.speccy.name)
             }
             ScrollView {
                 self.information()

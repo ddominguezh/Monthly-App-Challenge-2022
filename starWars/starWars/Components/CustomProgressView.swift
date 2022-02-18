@@ -12,7 +12,7 @@ struct CustomProgressView: View {
         ProgressView()
             .progressViewStyle(CircularProgressViewStyle(tint: .black))
             .padding(25)
-            .background(Color.background)
+            .background(Color.whiteAlpha)
             .cornerRadius(50)
     }
 }

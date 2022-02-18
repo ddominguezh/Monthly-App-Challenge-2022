@@ -55,7 +55,7 @@ struct SearchBar: View {
             }
         }
         .padding(10)
-        .background(Color.background)
+        .background(Color.whiteAlpha)
         .cornerRadius(20)
     }
 }

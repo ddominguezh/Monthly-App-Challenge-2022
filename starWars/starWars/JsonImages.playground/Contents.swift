@@ -221,9 +221,9 @@ private func printJson() {
     print(String(data: result, encoding: String.Encoding.utf8))
 }
 
-films(url: String.Empty)
+//films(url: String.Empty)
 species(url: String.Empty)
-vehicles(url: String.Empty)
-startships(url: String.Empty)
-planets(url: String.Empty)
-peoples(url: String.Empty)
+//vehicles(url: String.Empty)
+//startships(url: String.Empty)
+//planets(url: String.Empty)
+//peoples(url: String.Empty)

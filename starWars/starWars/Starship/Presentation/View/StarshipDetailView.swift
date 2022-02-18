@@ -14,8 +14,7 @@ struct StarshipDetailView: View {
     fileprivate func detail(size: CGSize) -> some View {
         VStack {
             if !model.starship.name.isEmpty {
-                ImageView(name: model.starship.name)
-                    .frame(width: 100, height: 100)
+                DetailImage(name: model.starship.name)
             }
             ScrollView {
                 self.information()

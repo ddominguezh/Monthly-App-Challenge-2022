@@ -25,6 +25,7 @@ struct ContentView: View {
                 }.padding(16)
             }
             .cornerRadius(16.0)
+            .overlay(RoundedRectangle(cornerRadius: 16.0).stroke(Color.whiteAlpha, lineWidth: 3))
         }
     }
 

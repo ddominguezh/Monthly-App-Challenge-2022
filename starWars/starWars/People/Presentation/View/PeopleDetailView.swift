@@ -14,8 +14,7 @@ struct PeopleDetailView: View {
     fileprivate func detail(size: CGSize) -> some View {
         VStack {
             if !model.people.name.isEmpty {
-                ImageView(name: model.people.name)
-                    .frame(width: 100, height: 100)
+                DetailImage(name: model.people.name)
             }
             ScrollView {
                 self.information()
