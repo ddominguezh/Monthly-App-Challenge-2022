@@ -21,7 +21,7 @@ struct GridHView<Content>: View where Content: View {
     var body: some View {
         VStack {
             Title(self.title)
-            ScrollView(.horizontal) {
+            ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: gridItemLayout, spacing: 16.0) {
                     self.content()
                 }

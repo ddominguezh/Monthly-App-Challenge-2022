@@ -30,7 +30,7 @@ struct GridVView<Content>: View where Content: View {
     }
     
     var body: some View {
-        ScrollView() {
+        ScrollView(showsIndicators: false) {
             LazyVGrid(columns: gridItemLayout, spacing: 16.0) {
                 self.content()
             }

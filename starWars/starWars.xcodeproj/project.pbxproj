@@ -175,6 +175,7 @@
 		26F7E04327BCBB8000982E9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26F7E04527BCBB8000982E9B /* Localizable.strings */; };
 		26F7E04827BE596900982E9B /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E04727BE596900982E9B /* Line.swift */; };
 		26F7E04A27C01F9000982E9B /* DetailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E04927C01F9000982E9B /* DetailImage.swift */; };
+		26F7E04C27C0466000982E9B /* String+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E04B27C0466000982E9B /* String+Height.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -368,6 +369,7 @@
 		26F7E04627BCBB8400982E9B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		26F7E04727BE596900982E9B /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		26F7E04927C01F9000982E9B /* DetailImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImage.swift; sourceTree = "<group>"; };
+		26F7E04B27C0466000982E9B /* String+Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Height.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -505,6 +507,7 @@
 			children = (
 				26F7E03827B63D1C00982E9B /* Exception */,
 				26DDCCAF27AD8FBB001C98C3 /* String+Empty.swift */,
+				26F7E04B27C0466000982E9B /* String+Height.swift */,
 				26F7DFE827B0EA8800982E9B /* Color+App.swift */,
 				26F7E03F27BB631500982E9B /* Image+Cropped.swift */,
 			);
@@ -1967,6 +1970,7 @@
 				26DDCD6027AE77D6001C98C3 /* VehicleListModel.swift in Sources */,
 				26DDCD9627AE8113001C98C3 /* SpeccyListAPIEntity.swift in Sources */,
 				26DDCD8827AE8031001C98C3 /* VehicleRepositoryImpl.swift in Sources */,
+				26F7E04C27C0466000982E9B /* String+Height.swift in Sources */,
 				26DDCD2627AE5ABA001C98C3 /* PlanetRouter.swift in Sources */,
 				26DDCD5E27AE77C0001C98C3 /* FilmListModel.swift in Sources */,
 				26DDCCB727AD9B9A001C98C3 /* PeopleDetailViewModel.swift in Sources */,
