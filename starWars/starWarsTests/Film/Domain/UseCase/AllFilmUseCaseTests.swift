@@ -19,7 +19,7 @@ class AllFilmUseCaseTests: XCTestCase {
                 XCTAssertGreaterThan(result.count, 0)
                 XCTAssertEqual(result.previous, String.Empty)
                 XCTAssertEqual(result.next, String.Empty)
-                XCTAssertEqual(result.results.count, 6)
+                XCTAssertEqual(result.results.count, 7)
                 expectation.fulfill()
             case .failure(_):
                 XCTFail()

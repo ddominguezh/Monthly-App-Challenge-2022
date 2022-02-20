@@ -153,7 +153,7 @@
 		26F7DFE927B0EA8800982E9B /* Color+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFE827B0EA8800982E9B /* Color+App.swift */; };
 		26F7DFEB27B16E4600982E9B /* GridCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFEA27B16E4600982E9B /* GridCellView.swift */; };
 		26F7DFF227B1C50700982E9B /* ImageAPIImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFF127B1C50700982E9B /* ImageAPIImpl.swift */; };
-		26F7DFF827B1C7D600982E9B /* DonwloadImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFF727B1C7D600982E9B /* DonwloadImageTests.swift */; };
+		26F7DFF827B1C7D600982E9B /* ImageAPIImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFF727B1C7D600982E9B /* ImageAPIImplTests.swift */; };
 		26F7DFFB27B2608500982E9B /* GoogleSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFFA27B2608500982E9B /* GoogleSearchResponse.swift */; };
 		26F7DFFD27B2663600982E9B /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFFC27B2663600982E9B /* CustomProgressView.swift */; };
 		26F7DFFF27B36A8C00982E9B /* JsonImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7DFFE27B36A8C00982E9B /* JsonImages.swift */; };
@@ -176,6 +176,7 @@
 		26F7E04827BE596900982E9B /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E04727BE596900982E9B /* Line.swift */; };
 		26F7E04A27C01F9000982E9B /* DetailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E04927C01F9000982E9B /* DetailImage.swift */; };
 		26F7E04C27C0466000982E9B /* String+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E04B27C0466000982E9B /* String+Height.swift */; };
+		26F7E05327C2A72B00982E9B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E05227C2A72B00982E9B /* Configuration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -345,7 +346,7 @@
 		26F7DFE827B0EA8800982E9B /* Color+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+App.swift"; sourceTree = "<group>"; };
 		26F7DFEA27B16E4600982E9B /* GridCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCellView.swift; sourceTree = "<group>"; };
 		26F7DFF127B1C50700982E9B /* ImageAPIImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIImpl.swift; sourceTree = "<group>"; };
-		26F7DFF727B1C7D600982E9B /* DonwloadImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonwloadImageTests.swift; sourceTree = "<group>"; };
+		26F7DFF727B1C7D600982E9B /* ImageAPIImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIImplTests.swift; sourceTree = "<group>"; };
 		26F7DFFA27B2608500982E9B /* GoogleSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSearchResponse.swift; sourceTree = "<group>"; };
 		26F7DFFC27B2663600982E9B /* CustomProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
 		26F7DFFE27B36A8C00982E9B /* JsonImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonImages.swift; sourceTree = "<group>"; };
@@ -370,6 +371,10 @@
 		26F7E04727BE596900982E9B /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		26F7E04927C01F9000982E9B /* DetailImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImage.swift; sourceTree = "<group>"; };
 		26F7E04B27C0466000982E9B /* String+Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Height.swift"; sourceTree = "<group>"; };
+		26F7E04F27C2A6D200982E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		26F7E05027C2A70B00982E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		26F7E05127C2A71800982E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		26F7E05227C2A72B00982E9B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -420,6 +425,7 @@
 		26DDCC0827ACFC37001C98C3 /* starWars */ = {
 			isa = PBXGroup;
 			children = (
+				26F7E04F27C2A6D200982E9B /* Info.plist */,
 				26F7DFE327B0419E00982E9B /* Components */,
 				26DDCC6127AD44C3001C98C3 /* Helpers */,
 				26F7E02227B62EE000982E9B /* Image */,
@@ -451,6 +457,7 @@
 		26DDCC1927ACFC46001C98C3 /* starWarsTests */ = {
 			isa = PBXGroup;
 			children = (
+				26F7E05027C2A70B00982E9B /* Info.plist */,
 				26F7DFF327B1C7A700982E9B /* Helpers */,
 				26DDCDBD27AE9C50001C98C3 /* Speccy */,
 				26DDCDBC27AE9C49001C98C3 /* Vehicle */,
@@ -466,6 +473,7 @@
 		26DDCC2327ACFC46001C98C3 /* starWarsUITests */ = {
 			isa = PBXGroup;
 			children = (
+				26F7E05127C2A71800982E9B /* Info.plist */,
 				26DDCC2427ACFC46001C98C3 /* starWarsUITests.swift */,
 				26DDCC2627ACFC46001C98C3 /* starWarsUITestsLaunchTests.swift */,
 			);
@@ -510,6 +518,7 @@
 				26F7E04B27C0466000982E9B /* String+Height.swift */,
 				26F7DFE827B0EA8800982E9B /* Color+App.swift */,
 				26F7E03F27BB631500982E9B /* Image+Cropped.swift */,
+				26F7E05227C2A72B00982E9B /* Configuration.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1608,7 +1617,7 @@
 		26F7DFF627B1C7BF00982E9B /* API */ = {
 			isa = PBXGroup;
 			children = (
-				26F7DFF727B1C7D600982E9B /* DonwloadImageTests.swift */,
+				26F7DFF727B1C7D600982E9B /* ImageAPIImplTests.swift */,
 				26F7DFFE27B36A8C00982E9B /* JsonImages.swift */,
 			);
 			path = API;
@@ -1972,6 +1981,7 @@
 				26DDCD8827AE8031001C98C3 /* VehicleRepositoryImpl.swift in Sources */,
 				26F7E04C27C0466000982E9B /* String+Height.swift in Sources */,
 				26DDCD2627AE5ABA001C98C3 /* PlanetRouter.swift in Sources */,
+				26F7E05327C2A72B00982E9B /* Configuration.swift in Sources */,
 				26DDCD5E27AE77C0001C98C3 /* FilmListModel.swift in Sources */,
 				26DDCCB727AD9B9A001C98C3 /* PeopleDetailViewModel.swift in Sources */,
 				26DDCCDA27ADA97C001C98C3 /* StarshipRepositoryImpl.swift in Sources */,
@@ -2015,7 +2025,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26DDCD0127ADE3FD001C98C3 /* FilterPeopleUseCaseTests.swift in Sources */,
-				26F7DFF827B1C7D600982E9B /* DonwloadImageTests.swift in Sources */,
+				26F7DFF827B1C7D600982E9B /* ImageAPIImplTests.swift in Sources */,
 				26DDCC1B27ACFC46001C98C3 /* starWarsTests.swift in Sources */,
 				26DDCDD027AE9D13001C98C3 /* VehicleAPIImplTests.swift in Sources */,
 				26DDCDE827AE9F9A001C98C3 /* AllSpeccyUseCaseTests.swift in Sources */,
@@ -2213,6 +2223,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"starWars/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = starWars/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2242,6 +2253,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"starWars/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = starWars/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -2269,6 +2281,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = starWarsTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2293,6 +2307,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = starWarsTests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2316,6 +2332,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = starWarsUITests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2338,6 +2356,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = starWarsUITests/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

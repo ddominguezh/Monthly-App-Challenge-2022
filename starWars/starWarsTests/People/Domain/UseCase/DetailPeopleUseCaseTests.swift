@@ -13,7 +13,7 @@ class DetailPeopleUseCaseTests: XCTestCase {
     func testExecute() throws {
         let expectation = self.expectation(description: "Search")
         let useCase = DetailPeopleUseCase(repository: PeopleRepositoryImpl(dataSource: PeopleAPIImpl()))
-        useCase.execute(url: "https://swapi.dev/api/people/1/") {
+        useCase.execute(url: "\(PeopleAPIImpl.domain)/1/") {
             switch $0 {
             case .success(let result):
                 XCTAssertEqual(result.name, "Luke Skywalker")
@@ -24,12 +24,12 @@ class DetailPeopleUseCaseTests: XCTestCase {
                 XCTAssertEqual(result.eyeColor, "blue")
                 XCTAssertEqual(result.birthYear, "19BBY")
                 XCTAssertEqual(result.gender, "male")
-                XCTAssertEqual(result.homeworld, "https://swapi.dev/api/planets/1/")
-                XCTAssertEqual(result.films.count, 4)
-                XCTAssertEqual(result.species.count, 0)
+                XCTAssertEqual(result.homeworld, "\(PlanetAPIImpl.domain)/1/")
+                XCTAssertEqual(result.films.count, 5)
+                XCTAssertEqual(result.species.count, 1)
                 XCTAssertEqual(result.vehicles.count, 2)
                 XCTAssertEqual(result.starships.count, 2)
-                XCTAssertEqual(result.url, "https://swapi.dev/api/people/1/")
+                XCTAssertEqual(result.url, "\(PeopleAPIImpl.domain)/1/")
                 expectation.fulfill()
             case .failure(_):
                 XCTFail()

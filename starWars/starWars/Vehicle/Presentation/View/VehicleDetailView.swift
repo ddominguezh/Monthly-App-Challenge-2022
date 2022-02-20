@@ -82,7 +82,7 @@ struct VehicleDetailView: View {
 struct VehicleDetailView_Previews: PreviewProvider {
     static var previews: some View {
         VehicleDetailView(
-            model: VehicleDetailViewModel(url: "https://swapi.dev/api/vehicles/14/")
+            model: VehicleDetailViewModel(url: "\(VehicleAPIImpl.domain)/14/")
         )
     }
 }

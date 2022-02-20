@@ -1,5 +1,5 @@
 //
-//  DonwloadImage.swift
+//  ImageAPIImpl.swift
 //  starWars
 //
 //  Created by Diego Alberto Dominguez Herreros on 7/2/22.

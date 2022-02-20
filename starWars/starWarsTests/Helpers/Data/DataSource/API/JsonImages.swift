@@ -26,7 +26,7 @@ class JsonImages: XCTestCase {
             FilmAPIImpl().search(
                 completion: { result in
                     result.results.forEach {
-                        self.items.append(JsonImage(name: $0.title, image: DonwloadImage(name: $0.title).getFirstImage()))
+                        self.items.append(JsonImage(name: $0.title, image: ImageAPIImpl().getUrlImage(name: $0.title)))
                     }
                     if !result.next.isEmpty {
                         self.films(url: result.next)
@@ -42,7 +42,7 @@ class JsonImages: XCTestCase {
                 url: url,
                 completion: { result in
                     result.results.forEach {
-                        self.items.append(JsonImage(name: $0.title, image: DonwloadImage(name: $0.title).getFirstImage()))
+                        self.items.append(JsonImage(name: $0.title, image: ImageAPIImpl().getUrlImage(name: $0.title)))
                     }
                     if !result.next.isEmpty {
                         self.films(url: result.next)
@@ -61,7 +61,7 @@ class JsonImages: XCTestCase {
             SpeccyAPIImpl().search(
                 completion: { result in
                     result.results.forEach {
-                        self.items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
+                        self.items.append(JsonImage(name: $0.name, image: ImageAPIImpl().getUrlImage(name: $0.name)))
                     }
                     if !result.next.isEmpty {
                         self.species(url: result.next)
@@ -77,7 +77,7 @@ class JsonImages: XCTestCase {
                 url: url,
                 completion: { result in
                     result.results.forEach {
-                        self.items.append(JsonImage(name: $0.name, image: DonwloadImage(name: $0.name).getFirstImage()))
+                        self.items.append(JsonImage(name: $0.name, image: ImageAPIImpl().getUrlImage(name: $0.name)))
                     }
                     if !result.next.isEmpty {
                         self.species(url: result.next)

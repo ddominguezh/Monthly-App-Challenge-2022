@@ -89,7 +89,7 @@ struct SpeccyDetailView: View {
 struct SpeccyDetailView_Previews: PreviewProvider {
     static var previews: some View {
         SpeccyDetailView(
-            model: SpeccyDetailViewModel(url: "https://swapi.dev/api/species/1/")
+            model: SpeccyDetailViewModel(url: "\(SpeccyAPIImpl.domain)/1/")
         )
     }
 }

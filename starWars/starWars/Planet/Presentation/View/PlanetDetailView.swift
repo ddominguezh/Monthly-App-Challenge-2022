@@ -83,7 +83,7 @@ struct PlanetDetailView_Previews: PreviewProvider {
     static var previews: some View {
         PlanetDetailView(
             model: PlanetDetailViewModel(
-                url: "https://swapi.dev/api/planets/3/"
+                url: "\(PlanetAPIImpl.domain)/3/"
             )
         )
     }

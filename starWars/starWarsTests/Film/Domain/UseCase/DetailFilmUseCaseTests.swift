@@ -13,7 +13,7 @@ class DetailFilmUseCaseTests: XCTestCase {
     func testExecute() throws {
         let expectation = self.expectation(description: "Search")
         let useCase = DetailFilmUseCase(repository: FilmRepositoryImpl(dataSource: FilmAPIImpl()))
-        useCase.execute(url: "https://swapi.dev/api/films/2/") {
+        useCase.execute(url: "\(FilmAPIImpl.domain)/2/") {
             switch $0 {
             case .success(let result):
                 XCTAssertEqual(result.title, "The Empire Strikes Back")
@@ -27,7 +27,7 @@ class DetailFilmUseCaseTests: XCTestCase {
                 XCTAssertEqual(result.starships.count, 9)
                 XCTAssertEqual(result.vehicles.count, 6)
                 XCTAssertEqual(result.species.count, 5)
-                XCTAssertEqual(result.url, "https://swapi.dev/api/films/2/")
+                XCTAssertEqual(result.url, "\(FilmAPIImpl.domain)/2/")
                 expectation.fulfill()
             case .failure(_):
                 XCTFail()

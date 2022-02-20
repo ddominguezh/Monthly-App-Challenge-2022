@@ -91,7 +91,7 @@ struct StarshipDetailView_Previews: PreviewProvider {
     static var previews: some View {
         StarshipDetailView(
             model: StarshipDetailViewModel (
-                url: "https://swapi.dev/api/starships/9/"
+                url: "\(StarshipAPIImpl.domain)/9/"
             )
         )
     }

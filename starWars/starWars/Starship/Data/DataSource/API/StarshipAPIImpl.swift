@@ -9,7 +9,7 @@ import Foundation
 
 struct StarshipAPIImpl: StarshipDataSource {
 
-    private static let domain: String = "https://swapi.dev/api/starships"
+    public static let domain: String = "\(Configuration.apiURL)/starships"
 
     func page(url: String, completion: @escaping (StarshipListModel) -> Void, failure: @escaping (Error) -> Void) {
         assert(url.contains(StarshipAPIImpl.domain))

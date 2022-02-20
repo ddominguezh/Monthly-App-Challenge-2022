@@ -16,7 +16,7 @@ class SpeccyAPIImplTests: XCTestCase {
             completion: { result in
                 XCTAssertGreaterThan(result.count, 0)
                 XCTAssertEqual(result.previous, String.Empty)
-                XCTAssertEqual(result.next, "https://swapi.dev/api/species/?page=2")
+                XCTAssertEqual(result.next, "\(SpeccyAPIImpl.domain)/?page=2")
                 XCTAssertEqual(result.results.count, 10)
                 expectation.fulfill()
             },
@@ -48,11 +48,11 @@ class SpeccyAPIImplTests: XCTestCase {
     func testPage() throws {
         let expectation = self.expectation(description: "Search")
         SpeccyAPIImpl().page(
-            url: "https://swapi.dev/api/species/?page=2",
+            url: "\(SpeccyAPIImpl.domain)/?page=2",
             completion: { result in
                 XCTAssertGreaterThan(result.count, 0)
-                XCTAssertEqual(result.previous, "https://swapi.dev/api/species/?page=1")
-                XCTAssertEqual(result.next, "https://swapi.dev/api/species/?page=3")
+                XCTAssertEqual(result.previous, "\(SpeccyAPIImpl.domain)/?page=1")
+                XCTAssertEqual(result.next, "\(SpeccyAPIImpl.domain)/?page=3")
                 XCTAssertEqual(result.results.count, 10)
                 expectation.fulfill()
             },

@@ -13,12 +13,12 @@ class PageSpeccyUseCaseTests: XCTestCase {
     func testExecute() throws {
         let expectation = self.expectation(description: "Search")
         let useCase = PageSpeccyUseCase(repository: SpeccyRepositoryImpl(dataSource: SpeccyAPIImpl()))
-        useCase.execute(url: "https://swapi.dev/api/species/?page=2") {
+        useCase.execute(url: "\(SpeccyAPIImpl.domain)/?page=2") {
             switch $0 {
             case .success(let result):
                 XCTAssertGreaterThan(result.count, 0)
-                XCTAssertEqual(result.previous, "https://swapi.dev/api/species/?page=1")
-                XCTAssertEqual(result.next, "https://swapi.dev/api/species/?page=3")
+                XCTAssertEqual(result.previous, "\(SpeccyAPIImpl.domain)/?page=1")
+                XCTAssertEqual(result.next, "\(SpeccyAPIImpl.domain)/?page=3")
                 XCTAssertEqual(result.results.count, 10)
                 expectation.fulfill()
             case .failure(_):

@@ -9,7 +9,7 @@ import Foundation
 
 struct PeopleAPIImpl: PeopleDataSource {
 
-    private static let domain: String = "https://swapi.dev/api/people"
+    public static let domain: String = "\(Configuration.apiURL)/people"
     
     func page(url: String, completion: @escaping (PeopleListModel) -> Void, failure: @escaping (Error) -> Void) {
         assert(url.contains(PeopleAPIImpl.domain))

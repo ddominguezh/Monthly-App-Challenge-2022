@@ -9,7 +9,7 @@ import Foundation
 
 struct VehicleAPIImpl: VehicleDataSource {
 
-    private static let domain: String = "https://swapi.dev/api/vehicles"
+    public static let domain: String = "\(Configuration.apiURL)/vehicles"
 
     func page(url: String, completion: @escaping (VehicleListModel) -> Void, failure: @escaping (Error) -> Void) {
         assert(url.contains(VehicleAPIImpl.domain))

@@ -13,7 +13,7 @@ class DetailPlanetUseCaseTests: XCTestCase {
     func testExecute() throws {
         let expectation = self.expectation(description: "Search")
         let useCase = DetailPlanetUseCase(repository: PlanetRepositoryImpl(dataSource: PlanetAPIImpl()))
-        useCase.execute(url: "https://swapi.dev/api/planets/3/") {
+        useCase.execute(url: "\(PlanetAPIImpl.domain)/3/") {
             switch $0 {
             case .success(let result):
                 XCTAssertEqual(result.name, "Yavin IV")
@@ -27,7 +27,7 @@ class DetailPlanetUseCaseTests: XCTestCase {
                 XCTAssertEqual(result.population, "1000")
                 XCTAssertEqual(result.residents.count, 0)
                 XCTAssertEqual(result.films.count, 1)
-                XCTAssertEqual(result.url, "https://swapi.dev/api/planets/3/")
+                XCTAssertEqual(result.url, "\(PlanetAPIImpl.domain)/3/")
                 expectation.fulfill()
             case .failure(_):
                 XCTFail()

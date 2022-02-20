@@ -84,7 +84,7 @@ struct FilmDetailView: View {
             VStack(alignment: .leading) {
                 Text("opening-crawl")
                     .font(.system(size: 14))
-                ScrollView(showsIndicators: false) {
+                ScrollView([], showsIndicators: false) {
                     if !self.model.film.openingCrawl.isEmpty {
                         Text(self.model.film.openingCrawl)
                             .font(.system(size: 18))
@@ -96,7 +96,7 @@ struct FilmDetailView: View {
                             .shadow(color: Color.whiteAlpha, radius: 2, x: 0, y: 15.0)
                             .onAppear() {
                                 DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
-                                    while(self.model.film.openingCrawl.heightFrom() - offset > 100) {
+                                    while(self.model.film.openingCrawl.heightFrom() - offset > (size.height/4.0)) {
                                         self.offset += 1
                                         usleep(100000)
                                     }
@@ -136,7 +136,7 @@ struct FilmDetailView: View {
 struct FilmDetailView_Previews: PreviewProvider {
     static var previews: some View {
         FilmDetailView(
-            model: FilmDetailViewModel(url: "https://swapi.dev/api/films/1/")
+            model: FilmDetailViewModel(url: "\(FilmAPIImpl.domain)/1/")
         )
     }
 }

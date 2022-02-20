@@ -13,7 +13,7 @@ class DetailStarshipUseCaseTests: XCTestCase {
     func testExecute() throws {
         let expectation = self.expectation(description: "Search")
         let useCase = DetailStarshipUseCase(repository: StarshipRepositoryImpl(dataSource: StarshipAPIImpl()))
-        useCase.execute(url: "https://swapi.dev/api/starships/9/") {
+        useCase.execute(url: "\(StarshipAPIImpl.domain)/9/") {
             switch $0 {
             case .success(let result):
                 XCTAssertEqual(result.name, "Death Star")
@@ -31,7 +31,7 @@ class DetailStarshipUseCaseTests: XCTestCase {
                 XCTAssertEqual(result.starshipClass, "Deep Space Mobile Battlestation")
                 XCTAssertEqual(result.pilots.count, 0)
                 XCTAssertEqual(result.films.count, 1)
-                XCTAssertEqual(result.url, "https://swapi.dev/api/starships/9/")
+                XCTAssertEqual(result.url, "\(StarshipAPIImpl.domain)/9/")
                 expectation.fulfill()
             case .failure(_):
                 XCTFail()

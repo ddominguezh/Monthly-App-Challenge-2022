@@ -18,7 +18,7 @@ class AllPeopleUseCaseTests: XCTestCase {
             case .success(let result):
                 XCTAssertGreaterThan(result.count, 0)
                 XCTAssertEqual(result.previous, String.Empty)
-                XCTAssertEqual(result.next, "https://swapi.dev/api/people/?page=2")
+                XCTAssertEqual(result.next, "\(PeopleAPIImpl.domain)/?page=2")
                 XCTAssertEqual(result.results.count, 10)
                 expectation.fulfill()
             case .failure(_):

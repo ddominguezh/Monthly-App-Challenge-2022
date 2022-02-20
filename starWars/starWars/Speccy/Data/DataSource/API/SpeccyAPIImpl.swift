@@ -9,7 +9,7 @@ import Foundation
 
 struct SpeccyAPIImpl: SpeccyDataSource {
 
-    private static let domain: String = "https://swapi.dev/api/species"
+    public static let domain: String = "\(Configuration.apiURL)/species"
 
     func page(url: String, completion: @escaping (SpeccyListModel) -> Void, failure: @escaping (Error) -> Void) {
         assert(url.contains(SpeccyAPIImpl.domain))

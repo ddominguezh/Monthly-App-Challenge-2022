@@ -13,7 +13,7 @@ class PageFilmUseCaseTests: XCTestCase {
     func testExecute() throws {
         let expectation = self.expectation(description: "Search")
         let useCase = PageFilmUseCase(repository: FilmRepositoryImpl(dataSource: FilmAPIImpl()))
-        useCase.execute(url: "https://swapi.dev/api/films/?page=2") {
+        useCase.execute(url: "\(FilmAPIImpl.domain)/?page=2") {
             switch $0 {
             case .success(_):
                 XCTFail()

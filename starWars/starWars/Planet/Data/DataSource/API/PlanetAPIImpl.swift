@@ -9,7 +9,7 @@ import Foundation
 
 struct PlanetAPIImpl: PlanetDataSource {
 
-    private static let domain: String = "https://swapi.dev/api/planets"
+    public static let domain: String = "\(Configuration.apiURL)/planets"
 
     func page(url: String, completion: @escaping (PlanetListModel) -> Void, failure: @escaping (Error) -> Void) {
         assert(url.contains(PlanetAPIImpl.domain))

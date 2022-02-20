@@ -13,7 +13,7 @@ class DetailSpeccyUseCaseTests: XCTestCase {
     func testExecute() throws {
         let expectation = self.expectation(description: "Search")
         let useCase = DetailSpeccyUseCase(repository: SpeccyRepositoryImpl(dataSource: SpeccyAPIImpl()))
-        useCase.execute(url: "https://swapi.dev/api/species/8/") {
+        useCase.execute(url: "\(SpeccyAPIImpl.domain)/8/") {
             switch $0 {
             case .success(let result):
                 XCTAssertEqual(result.name, "Mon Calamari")
@@ -24,11 +24,11 @@ class DetailSpeccyUseCaseTests: XCTestCase {
                 XCTAssertEqual(result.hairColors, "none")
                 XCTAssertEqual(result.eyeColors, "yellow")
                 XCTAssertEqual(result.averageLifespan, "unknown")
-                XCTAssertEqual(result.homeworld, "https://swapi.dev/api/planets/31/")
+                XCTAssertEqual(result.homeworld, "\(PlanetAPIImpl.domain)/31/")
                 XCTAssertEqual(result.language, "Mon Calamarian")
                 XCTAssertEqual(result.people.count, 1)
                 XCTAssertEqual(result.films.count, 1)
-                XCTAssertEqual(result.url, "https://swapi.dev/api/species/8/")
+                XCTAssertEqual(result.url, "\(SpeccyAPIImpl.domain)/8/")
                 expectation.fulfill()
             case .failure(_):
                 XCTFail()

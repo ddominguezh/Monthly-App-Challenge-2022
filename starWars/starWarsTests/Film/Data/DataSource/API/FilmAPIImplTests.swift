@@ -17,7 +17,7 @@ class FilmAPIImplTests: XCTestCase {
                 XCTAssertGreaterThan(result.count, 0)
                 XCTAssertEqual(result.previous, String.Empty)
                 XCTAssertEqual(result.next, String.Empty)
-                XCTAssertEqual(result.results.count, 6)
+                XCTAssertEqual(result.results.count, 7)
                 expectation.fulfill()
             },
             failure: { _ in
@@ -48,7 +48,7 @@ class FilmAPIImplTests: XCTestCase {
     func testPage() throws {
         let expectation = self.expectation(description: "Search")
         FilmAPIImpl().page(
-            url: "https://swapi.dev/api/films/?page=2",
+            url: "\(FilmAPIImpl.domain)/?page=2",
             completion: { result in
                 XCTFail()
             },

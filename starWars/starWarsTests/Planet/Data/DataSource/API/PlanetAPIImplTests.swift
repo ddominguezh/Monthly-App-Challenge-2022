@@ -16,7 +16,7 @@ class PlanetAPIImplTests: XCTestCase {
             completion: { result in
                 XCTAssertGreaterThan(result.count, 0)
                 XCTAssertEqual(result.previous, String.Empty)
-                XCTAssertEqual(result.next, "https://swapi.dev/api/planets/?page=2")
+                XCTAssertEqual(result.next, "\(PlanetAPIImpl.domain)/?page=2")
                 XCTAssertEqual(result.results.count, 10)
                 expectation.fulfill()
             },
@@ -48,11 +48,11 @@ class PlanetAPIImplTests: XCTestCase {
     func testPage() throws {
         let expectation = self.expectation(description: "Search")
         PlanetAPIImpl().page(
-            url: "https://swapi.dev/api/planets/?page=3",
+            url: "\(PlanetAPIImpl.domain)/?page=3",
             completion: { result in
                 XCTAssertGreaterThan(result.count, 0)
-                XCTAssertEqual(result.previous, "https://swapi.dev/api/planets/?page=2")
-                XCTAssertEqual(result.next, "https://swapi.dev/api/planets/?page=4")
+                XCTAssertEqual(result.previous, "\(PlanetAPIImpl.domain)/?page=2")
+                XCTAssertEqual(result.next, "\(PlanetAPIImpl.domain)/?page=4")
                 XCTAssertEqual(result.results.count, 10)
                 expectation.fulfill()
             },

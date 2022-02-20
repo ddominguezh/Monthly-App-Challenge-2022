@@ -33,42 +33,48 @@ struct ContentView: View {
         GeometryReader { geo in
             NavigationView {
                 BackgroundView(size: geo.size) {
-                    LazyVGrid(columns: gridItemLayout, spacing: 16.0) {
-                        cell(
-                            destination: AnyView(FilmRouter.showList()),
-                            name: "films",
-                            image: "films"
-                        )
-                        cell(
-                            destination: AnyView(PeopleRouter.showList()),
-                            name: "peoples",
-                            image: "peoples"
-                        )
-                        cell(
-                            destination: AnyView(PlanetRouter.showList()),
-                            name: "planets",
-                            image: "planets"
-                        )
-                        cell(
-                            destination: AnyView(SpeccyRouter.showList()),
-                            name: "species",
-                            image: "species"
-                        )
-                        cell(
-                            destination: AnyView(StarshipRouter.showList()),
-                            name: "starships",
-                            image: "starships"
-                        )
-                        cell(
-                            destination: AnyView(VehicleRouter.showList()),
-                            name: "vehicles",
-                            image: "vehicles"
-                        )
+                    VStack {
+                        Image("title")
+                            .resizable()
+                            .padding(20)
+                            .scaledToFit()
+                        LazyVGrid(columns: gridItemLayout, spacing: 16.0) {
+                            cell(
+                                destination: AnyView(FilmRouter.showList()),
+                                name: "films",
+                                image: "films"
+                            )
+                            cell(
+                                destination: AnyView(PeopleRouter.showList()),
+                                name: "peoples",
+                                image: "peoples"
+                            )
+                            cell(
+                                destination: AnyView(PlanetRouter.showList()),
+                                name: "planets",
+                                image: "planets"
+                            )
+                            cell(
+                                destination: AnyView(SpeccyRouter.showList()),
+                                name: "species",
+                                image: "species"
+                            )
+                            cell(
+                                destination: AnyView(StarshipRouter.showList()),
+                                name: "starships",
+                                image: "starships"
+                            )
+                            cell(
+                                destination: AnyView(VehicleRouter.showList()),
+                                name: "vehicles",
+                                image: "vehicles"
+                            )
+                        }
                     }
                 }
+                .navigationTitle(String.Empty)
+                .navigationBarHidden(true)
             }
-            .navigationTitle("Menu")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

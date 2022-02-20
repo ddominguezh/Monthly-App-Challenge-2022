@@ -16,7 +16,7 @@ class PeopleAPIImplTests: XCTestCase {
             completion: { result in
                 XCTAssertGreaterThan(result.count, 0)
                 XCTAssertEqual(result.previous, String.Empty)
-                XCTAssertEqual(result.next, "https://swapi.dev/api/people/?page=2")
+                XCTAssertEqual(result.next, "\(PeopleAPIImpl.domain)/?page=2")
                 XCTAssertEqual(result.results.count, 10)
                 expectation.fulfill()
             },
@@ -48,11 +48,11 @@ class PeopleAPIImplTests: XCTestCase {
     func testPage() throws {
         let expectation = self.expectation(description: "Search")
         PeopleAPIImpl().page(
-            url: "https://swapi.dev/api/people/?page=5",
+            url: "\(PeopleAPIImpl.domain)/?page=5",
             completion: { result in
                 XCTAssertGreaterThan(result.count, 0)
-                XCTAssertEqual(result.previous, "https://swapi.dev/api/people/?page=4")
-                XCTAssertEqual(result.next, "https://swapi.dev/api/people/?page=6")
+                XCTAssertEqual(result.previous, "\(PeopleAPIImpl.domain)/?page=4")
+                XCTAssertEqual(result.next, "\(PeopleAPIImpl.domain)/?page=6")
                 XCTAssertEqual(result.results.count, 10)
                 expectation.fulfill()
             },

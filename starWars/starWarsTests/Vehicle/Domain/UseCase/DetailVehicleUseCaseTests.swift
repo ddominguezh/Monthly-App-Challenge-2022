@@ -13,7 +13,7 @@ class DetailVehicleUseCaseTests: XCTestCase {
     func testExecute() throws {
         let expectation = self.expectation(description: "Search")
         let useCase = DetailVehicleUseCase(repository: VehicleRepositoryImpl(dataSource: VehicleAPIImpl()))
-        useCase.execute(url: "https://swapi.dev/api/vehicles/14/") {
+        useCase.execute(url: "\(VehicleAPIImpl.domain)/14/") {
             switch $0 {
             case .success(let result):
                 XCTAssertEqual(result.name, "Snowspeeder")
@@ -29,7 +29,7 @@ class DetailVehicleUseCaseTests: XCTestCase {
                 XCTAssertEqual(result.vehicleClass, "airspeeder")
                 XCTAssertEqual(result.pilots.count, 2)
                 XCTAssertEqual(result.films.count, 1)
-                XCTAssertEqual(result.url, "https://swapi.dev/api/vehicles/14/")
+                XCTAssertEqual(result.url, "\(VehicleAPIImpl.domain)/14/")
                 expectation.fulfill()
             case .failure(_):
                 XCTFail()

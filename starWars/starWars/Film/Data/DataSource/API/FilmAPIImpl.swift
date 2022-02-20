@@ -9,7 +9,7 @@ import Foundation
 
 struct FilmAPIImpl: FilmDataSource {
 
-    private static let domain: String = "https://swapi.dev/api/films"
+    public static let domain: String = "\(Configuration.apiURL)/films"
 
     func page(url: String, completion: @escaping (FilmListModel) -> Void, failure: @escaping (Error) -> Void) {
         assert(url.contains(FilmAPIImpl.domain))

@@ -111,7 +111,7 @@ struct PeopelDetailView_Previews: PreviewProvider {
     static var previews: some View {
         PeopleDetailView(
             model: PeopleDetailViewModel(
-                url: "https://swapi.dev/api/people/1/"
+                url: "\(PeopleAPIImpl.domain)/1/"
             )
         )
     }
