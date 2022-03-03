@@ -23,7 +23,7 @@ struct PeopleDetailView: View {
                         GridCellView(
                             text: model.homeworld.name,
                             detailView: AnyView(PlanetRouter.showDetail(planet: model.homeworld))
-                        ).frame(minWidth: size.width / 2, maxWidth: 160)
+                        ).frame(width: size.width / 2)
                     }
                 }
                 if model.films.count > 0 {
