@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PeopleDetailView: View {
-    
+
     @StateObject var model: PeopleDetailViewModel
     
     fileprivate func detail(size: CGSize) -> some View {

@@ -21,12 +21,15 @@ struct InformationItemView: View {
             HStack(alignment: VerticalAlignment.top) {
                 Text(self.localizedKey)
                     .font(.system(size: 14))
+                    .foregroundColor(.white)
                 Spacer()
                 Text(self.value)
+                    .foregroundColor(.white)
                     .bold()
             }
             Line()
                 .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                .foregroundColor(.white)
                 .frame(height: 1)
         }
     }

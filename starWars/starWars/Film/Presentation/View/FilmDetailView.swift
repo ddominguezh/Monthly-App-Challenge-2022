@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FilmDetailView: View {
+    
     @StateObject var model: FilmDetailViewModel
     @State var offset: CGFloat = 0
     
@@ -84,10 +85,12 @@ struct FilmDetailView: View {
             VStack(alignment: .leading) {
                 Text("opening-crawl")
                     .font(.system(size: 14))
+                    .foregroundColor(.white)
                 ScrollView([], showsIndicators: false) {
                     if !self.model.film.openingCrawl.isEmpty {
                         Text(self.model.film.openingCrawl)
                             .font(.system(size: 18))
+                            .foregroundColor(.white)
                             .bold()
                             .frame(width: size.width, height: self.model.film.openingCrawl.heightFrom())
                             .position(x: size.width/2.0, y: (size.height/2.0) - offset)
@@ -107,6 +110,7 @@ struct FilmDetailView: View {
                 .frame(height: 100.0)
                 Line()
                     .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                    .foregroundColor(.white)
                     .frame(height: 1)
             }
             InformationItemView(name: "director", value: self.model.film.director)
