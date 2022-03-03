@@ -14,6 +14,7 @@ struct Title: View {
     }
     var body: some View {
         Text(LocalizedStringKey(self.value))
+            .foregroundColor(.white)
             .bold()
             .font(.system(size: 30))
             .frame(maxWidth: .infinity, alignment: .leading)
