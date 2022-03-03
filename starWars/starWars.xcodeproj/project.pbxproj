@@ -177,6 +177,7 @@
 		26F7E04A27C01F9000982E9B /* DetailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E04927C01F9000982E9B /* DetailImage.swift */; };
 		26F7E04C27C0466000982E9B /* String+Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E04B27C0466000982E9B /* String+Height.swift */; };
 		26F7E05327C2A72B00982E9B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F7E05227C2A72B00982E9B /* Configuration.swift */; };
+		DD6F367227D1637D004D1DB0 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6F367127D1637D004D1DB0 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -375,6 +376,7 @@
 		26F7E05027C2A70B00982E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		26F7E05127C2A71800982E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		26F7E05227C2A72B00982E9B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		DD6F367127D1637D004D1DB0 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -519,6 +521,7 @@
 				26F7DFE827B0EA8800982E9B /* Color+App.swift */,
 				26F7E03F27BB631500982E9B /* Image+Cropped.swift */,
 				26F7E05227C2A72B00982E9B /* Configuration.swift */,
+				DD6F367127D1637D004D1DB0 /* ImageCache.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1952,6 +1955,7 @@
 				26DDCC0C27ACFC37001C98C3 /* ContentView.swift in Sources */,
 				26DDCD7E27AE7E7E001C98C3 /* PageSpeccyUseCase.swift in Sources */,
 				26DDCC6D27AD463B001C98C3 /* StarshipModel.swift in Sources */,
+				DD6F367227D1637D004D1DB0 /* ImageCache.swift in Sources */,
 				26DDCCF727ADDAB8001C98C3 /* UseCaseException.swift in Sources */,
 				26DDCCC727AD9C63001C98C3 /* StarshipListViewModel.swift in Sources */,
 				26F7DFE927B0EA8800982E9B /* Color+App.swift in Sources */,
