@@ -11,7 +11,7 @@ struct VehicleListView: View {
 
     @StateObject var model = VehicleListViewModel()
     @State var searchText: String = String.Empty
-
+    
     fileprivate func grid() -> some View {
         GridVView(delegate: self, hasMore: model.vehicles.count != model.vehicles.results.count) {
             ForEach(model.vehicles.results){ item in
