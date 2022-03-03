@@ -29,10 +29,6 @@ struct PlanetListView: View {
         .task {
             self.search()
         }
-        .alert("Error", isPresented: $model.hasError) {
-        } message: {
-            Text(model.errorMessage)
-        }
     }
     
     var body: some View {
